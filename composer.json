@@ -1,0 +1,24 @@
+{
+    "name": "phprio/site",
+    "description": "Site do user group de PHP do Rio de Janeiro",
+    "type": "project",
+    "minimum-stability": "dev",
+    "require": {
+	"php": ">=7.0",
+        "sculpin/sculpin": "^2.0"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "PHPRio",
+            "email": "contato@phprio.org"
+        }
+    ],
+    "scripts": {
+        "generate": "sculpin generate",
+        "prod"    : "sculpin generate --env=prod",
+        "watch"   : "sculpin generate --server --watch",
+        "serve"   : "sculpin generate --server",
+        "server"  : "@serve"
+    }
+}
