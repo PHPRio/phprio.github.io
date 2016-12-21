@@ -4,9 +4,9 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic,800,800italic');
 
 /*
-	Spectral by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CC-BY 3.0 license (html5up.net/license)
+Spectral by HTML5 UP
+html5up.net | @ajlkn
+Free for personal and commercial use under the CC-BY 3.0 license (html5up.net/license)
 */
 
 	@import 'libs/skel';
@@ -181,6 +181,7 @@
 		font-family: _font(family-fixed);
 		font-size: 0.9em;
 		margin: 0 0 _size(element-margin) 0;
+        text-align: left !important;
 
 		code {
 			display: block;
@@ -1047,8 +1048,12 @@
 				border-color: _palette($p, border);
 			}
 
-			code {
-				background: _palette($p, border-bg);
+            code {
+                background: _palette($p, border-bg);
+            }
+
+			pre code {
+				background: transparentize(_palette($p, fg-bold), 0.3);
 			}
 
 		// Section/Article
@@ -1476,11 +1481,23 @@
 		@include vendor('flex-direction', 'column');
 		@include vendor('justify-content', 'center');
 		cursor: default;
-		height: 100vh;
+		height: 550px;
 		min-height: 35em;
 		overflow: hidden;
 		position: relative;
 		text-align: center;
+        background: no-repeat center center;
+        background-size: cover;
+
+        .inner {
+            $bg: transparentize(#333, 0.4);
+            width: 30%;
+            margin: 0 auto;
+            border-radius: 100px;
+            background-color: $bg;
+            box-shadow: $bg 0 0 50px 28px;
+            padding-top: _size(element-margin);
+        }
 
 		h2 {
 			@include vendor('transform', 'scale(1)');
@@ -1668,11 +1685,9 @@
 	#main {
 		> header {
 			@include padding(12em, 0);
-			@include vendor('background-image', ('linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5))', 'url("../../images/banner.jpg")'));
-			background-attachment: fixed;
-			background-position: center center;
-			background-repeat: no-repeat;
-			background-size: cover;
+			//@include vendor('background-image', ('linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5))', 'url("../../images/banner.jpg")'));
+            //background: no-repeat fixed center center;
+            //background-size: cover;
 			text-align: center;
 
 			h2 {
@@ -1798,11 +1813,9 @@
 
 	body.landing {
 		#page-wrapper {
-			@include vendor('background-image', ('linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5))', 'url("../../images/banner.jpg")'));
-			background-attachment: fixed;
-			background-position: center center;
-			background-repeat: no-repeat;
-			background-size: cover;
+			//@include vendor('background-image', ('linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5))', 'url("../../images/banner.jpg")'));
+            //background: no-repeat fixed center center;
+            //background-size: cover;
 			padding-top: 0;
 		}
 
@@ -1819,10 +1832,9 @@
 
 			#banner,
 			.wrapper.style4 {
-				@include vendor('background-image', ('linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5))', 'url("../../images/banner.jpg")'));
-				background-position: center center;
-				background-repeat: no-repeat;
-				background-size: cover;
+				//@include vendor('background-image', ('linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5))', 'url("../../images/banner.jpg")'));
+                //background: no-repeat center center;
+                //background-size: cover;
 			}
 
 			#footer {

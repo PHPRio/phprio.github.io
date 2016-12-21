@@ -6,42 +6,39 @@
 -->
 <html>
 <head>
-    <head>
-        <title>{% block title %}{{ page.title }}{% endblock %} || {{ site.title }} - {{ site.subtitle }}</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{{ page.title }}{% endblock %} || {{ site.title }} - {{ site.subtitle }}</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        {% block head_meta %}
-            <meta name="robots" content="noindex, follow">
-        {% endblock %}
+    {% block head_meta %}
+        <meta name="robots" content="noindex, follow">
+    {% endblock %}
 
-        <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/main.css">
 
-        <meta name="mobile-web-app-capable" content="yes">
-        <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
 
-        <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png">
-        <link rel="icon" type="image/png" href="/images/favicon/favicon-32x32.png" sizes="32x32">
-        <link rel="icon" type="image/png" href="/images/favicon/favicon-194x194.png" sizes="194x194">
-        <link rel="icon" type="image/png" href="/images/favicon/android-chrome-192x192.png" sizes="192x192">
-        <link rel="icon" type="image/png" href="/images/favicon/favicon-16x16.png" sizes="16x16">
-        <link rel="manifest" href="/images/favicon/manifest.json">
-        <link rel="mask-icon" href="/images/favicon/safari-pinned-tab.svg" color="#0074c4">
-        <link rel="shortcut icon" href="/images/favicon/favicon.ico">
-        <meta name="msapplication-config" content="/images/browserconfig.xml">
-        <meta name="theme-color" content="#505B93">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="/images/favicon/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/images/favicon/favicon-194x194.png" sizes="194x194">
+    <link rel="icon" type="image/png" href="/images/favicon/android-chrome-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="/images/favicon/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="/images/favicon/manifest.json">
+    <link rel="mask-icon" href="/images/favicon/safari-pinned-tab.svg" color="#0074c4">
+    <link rel="shortcut icon" href="/images/favicon/favicon.ico">
+    <meta name="msapplication-config" content="/images/browserconfig.xml">
+    <meta name="theme-color" content="#505B93">
 
-        <script src="//use.fontawesome.com/406d7ed374.js"></script>
-        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/default.min.css">
-        <link rel="alternate" type="application/atom+xml" href="/atom.xml" title="Feed de atividades do {{ site.title }}" />
-        <style>
-            /** quick fix because bootstrap <pre> has a background-color. */
-            pre code { background-color: inherit; }
-        </style>
-        {% block head_styles %}{% endblock %}
-        {% block head_scripts %}{% endblock %}
-    </head>
-
+    <script src="//use.fontawesome.com/406d7ed374.js"></script>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/default.min.css">
+    <link rel="alternate" type="application/atom+xml" href="/atom.xml" title="Feed de atividades do {{ site.title }}" />
+    <style>
+        /** quick fix because bootstrap <pre> has a background-color. */
+        pre code { background-color: inherit; }
+    </style>
+    {% block head_styles %}{% endblock %}
+    {% block head_scripts %}{% endblock %}
 </head>
 <body class="landing">
 
@@ -50,7 +47,7 @@
 
     <!-- Header -->
     <header id="header" class="alt">
-        <h1><a href="index.html">Spectral</a></h1>
+        <h1><a href="/">{{ site.title }}</a></h1>
         <nav id="nav">
             <ul>
                 <li class="special">
@@ -58,7 +55,7 @@
                     <div id="menu">
                         <ul>
                             <li><a href="/news">Arquivo de news</a></li>
-                            <li><a href="/sobre">About</a></li>
+                            <li><a href="/sobre">Sobre o grupo</a></li>
                         </ul>
                     </div>
                 </li>
@@ -69,15 +66,14 @@
     <!-- Banner -->
     <section id="banner">
         <div class="inner">
-            <h2>Spectral</h2>
-            <p>Another fine responsive<br />
-                site template freebie<br />
-                crafted by <a href="http://html5up.net">HTML5 UP</a>.</p>
+            <h2>{{ site.title }}</h2>
+            <p>
+                Grupo de usuários de PHP<br />
+                do Rio de Janeiro / Brasil<br />
             <ul class="actions">
-                <li><a href="#" class="button special">Activate</a></li>
+                <li><a href="#" class="button special">Participe</a></li><!-- FIXME vai pra onde? -->
             </ul>
         </div>
-        <a href="#one" class="more scrolly">Learn More</a>
     </section>
 
     <!-- One -->
@@ -176,21 +172,20 @@
     <!-- Footer -->
     <footer id="footer">
         <ul class="icons fa-2x">
-            <li><a href="#" class="icon fa-2x fa-paper-plane-o"><span class="label">Telegram</span></a></li>
-            <li><a href="#" class="icon fa-2x fa-comments-o"><span class="label">Google Groups</span></a></li>
+            <li><a href="https://telegram.me/phprio" class="icon fa-2x fa-paper-plane-o"><span class="label">Telegram</span></a></li>
+            <li><a href="https://groups.google.com/forum/#!forum/phprio-org" class="icon fa-2x fa-comments-o"><span class="label">Google Groups</span></a></li>
             <li>|</li>
-            <li><a href="#" class="icon fa-2x fa-github-alt"><span class="label">GitHub</span></a></li>
-            <li><a href="#" class="icon fa-2x fa-twitter"><span class="label">Twitter</span></a></li>
-            <li><a href="#" class="icon fa-2x fa-facebook"><span class="label">Facebook</span></a></li>
+            <li><a href="https://github.com/PHPRio" class="icon fa-2x fa-github-alt"><span class="label">GitHub</span></a></li>
+            <li><a href="https://twitter.com/phprio" class="icon fa-2x fa-twitter"><span class="label">Twitter</span></a></li>
+            <li><a href="https://www.facebook.com/PHPRio-160383237381004/" class="icon fa-2x fa-facebook"><span class="label">Facebook</span></a></li>
         </ul>
         <ul class="copyright">
             <li>&copy; {{ "now"|date("Y") }} {{ site.title }}</li>
-            <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+            <li>Template: <a href="http://html5up.net">HTML5 UP</a></li>
         </ul>
     </footer>
 
 </div>
-
 
 
 

@@ -14,11 +14,14 @@
             "email": "contato@phprio.org"
         }
     ],
+    "process-timeout": 999999999999,
     "scripts": {
-        "generate": "sculpin generate",
-        "prod"    : "sculpin generate --env=prod",
-        "watch"   : "sculpin generate --server --watch",
-        "serve"   : "sculpin generate --server",
-        "server"  : "@serve"
+        "generate"  : "sculpin generate",
+        "prod"      : ["@sass", "sculpin generate --env=prod"],
+        "watch"     : "sculpin generate --server --watch",
+        "serve"     : "sculpin generate --server",
+        "server"    : "@serve",
+        "sass"      : "node-sass --source-map --output-style=compressed -o source/css source/css/main.scss",
+        "sass-watch": "node-sass --source-map true --source-map-contents --output-style=compressed -o source/css  --watch source/css/main.scss"
     }
 }
