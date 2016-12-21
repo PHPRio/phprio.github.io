@@ -904,7 +904,7 @@ Free for personal and commercial use under the CC-BY 3.0 license (html5up.net/li
 
 			&:before {
 				display: block;
-				color: _palette(accent2, bg);
+				color: _palette(accent2, fg-bold);
 				position: absolute;
 				left: 1.75em;
 				top: 2.75em;
@@ -1490,12 +1490,11 @@ Free for personal and commercial use under the CC-BY 3.0 license (html5up.net/li
         background-size: cover;
 
         .inner {
-            $bg: transparentize(#333, 0.4);
             width: 30%;
             margin: 0 auto;
             border-radius: 100px;
-            background-color: $bg;
-            box-shadow: $bg 0 0 50px 28px;
+            background-color: transparentize(#333, 0.43);
+            box-shadow: transparentize(#333, 0.4) 0 0 50px 28px;
             padding-top: _size(element-margin);
         }
 
