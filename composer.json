@@ -21,7 +21,7 @@
         "watch"     : "sculpin generate --server --watch",
         "serve"     : "sculpin generate --server",
         "server"    : "@serve",
-        "sass"      : "node-sass --source-map --output-style=compressed -o source/css source/css/main.scss",
+        "sass"      : "node-sass --source-map true --source-map-contents --output-style=compressed -o source/css source/css/main.scss",
         "sass-watch": "node-sass --source-map true --source-map-contents --output-style=compressed -o source/css  --watch source/css/main.scss"
     }
 }

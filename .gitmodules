@@ -1,0 +1,3 @@
+[submodule "output_prod"]
+	path = output_prod
+	url = git@github.com:PHPRio/phprio.github.io.git
