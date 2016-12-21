@@ -1,119 +1,64 @@
-Sculpin Blog Skeleton
-=====================
+Sources do site do PHP.rio
+==========================
 
-A skeleton for a Sculpin based blog.
+Descritivo dessa treta
+----------------------
 
-Powered by [Sculpin](http://sculpin.io). =)
+>TL;DR: aqui fica o _source_, os _statics_ ficam no [phprio.github.io][statics].
+ 
+Este repositório contém os sources do [php.rio](http://php.rio).
+O site é hospedado pelo próprio [GitHub Pages](https://pages.github.com). Para tanto, tínhamos duas opções:
+ 
+1. Fazer o site com [Jekyll](https://jekyllrb.com) e forçar a galera a se virar com Ruby e similares :mask:, mas tendo a build sendo gerada
+automaticamente
+2.  Fazer o site com um primo PHP do Jekyll, o [Sculpin](https://sculpin.io), que não faz build automática mas é PHPRio-friendly.
 
-
-Features
---------
-
-A very basic Sculpin based blog supporting the following features:
-
- * Very minimal Bootstrap based theme.
- * A handful of existing posts in `source/_posts/` to get you started. Feel
-   free to remove these when you are ready.
- * An about page at `/about`.
- * An index page at `/`. It displays all posts and paginates them.
- * A blog archive page at `/blog`. It displays post titles broken down by
-   month and is paginated.
- * A blog categories page at `/blog/categories`.
- * A blog category index at `/blog/categories/$category`. Similar to the blog
-   archive except broken down by each category.
- * A blog tags page at `/blog/tags`.
- * A blog tag index at `/blog/tags/$tag`. Similar to the blog archive
-   except broken down by each tag.
+Obviamente, fomos pela segunda opção. Para tanto, é necessário que o site seja publicado na raiz de um repositório com
+o nome correto e, pra não misturar os _statics_ com todo o _source_ do site, dividimos o projeto em dois repositórios.  
+Assim, o conteúdo final do site gerado fica em `/output_prod`, que é um submódulo desse aqui.
+ 
+> *Disclaimer:* esse projeto foi baseado no exemplo de Blog Skeleton que tem no [Get Started deles](https://sculpin.io/getstarted).
 
 
-Build
------
+Instalação
+----------
 
-### First of all, dependencies:
+_muidifício_.
 
-    composer install
-    vendor/bin/sculpin install
-    
-### Then you can compile:
+1. Clonar o repositório: `git clone git@github.com:PHPRio/site.git phprio-site`
+2. Entre na pasta, e prepare o submódulo: `git submodule init; git submodule update`
+3. Dependências: `composer install` (espero que você tenha o Composer instalado, né? Senão, veja [a seguir](#Composer))
+4. _[opcional]_ Se você for mexer no layout, você vai precisar do `node-sass` ou algum outro compilador de SASS. 
+Instale-o pelo NPM ou Yarn: `npm install --global node-sass` ou `yarn global add node-sass`.
 
-    vendor/bin/sculpin generate --watch --server
+> Não tente seguir as instruções do site do Sculpin. Elas estão bem desatualizadas (mandando usar um phar, por exemplo).
 
-Your newly generated clone of sculpin-blog-skeleton is now
-accessible at `http://localhost:8000/`.
+### Composer
 
-> Please, avoid the old instructions that told you to download their phar. That's _a lot_ outdated.
-
-
-Previewing Development Builds
------------------------------
-
-By default the site will be generated in `output_dev/`. This is the location
-of your development build.
-
-To preview it with Sculpin's built in webserver, run either of the following
-commands. This will start a simple webserver listening at `localhost:8000`.
-
-### Using Sculpin's Internal Webserver
-
-#### Generate Command
-
-To serve files right after generating them, use the `generate` command with
-the `--server` option:
-
-    vendor/bin/sculpin generate --server
-
-To listen on a different port, specify the `--port` option:
-
-    vendor/bin/sculpin generate --server --port=9999
-
-Combine with `--watch` to have Sculpin pick up changes as you make them:
-
-    vendor/bin/sculpin generate --server --watch
+Método prático pra instalar o Composer globalmente no seu PC: `curl -sS https://getcomposer.org/installer | sudo php -- --filename=composer --install-dir=/usr/local/bin`
 
 
-##### Server Command
+Compilação do site
+------------------
 
-To serve files that have already been generated, use the `serve` command:
+### Desenvolvimento
 
-    vendor/bin/sculpin serve
+- Para testar o site durante o desenvolvimento você pode executar `composer watch` e acessar em `localhost:8000`.
+- Para compilar ele uma única vez e servir, `composer serve`.
+- Há também como compilar estaticamente e só, com o `composer generate`.
+- Para o layout, nós usamos SASS. Se você for mexer nisso, é importante subir também o watcher de SASS:
+`composer sass-watch`. Se quiser compilar uma única vez, `composer sass`.
 
-To listen on a different port, specify the `--port` option:
+### Produção
 
-    vendor/bin/sculpin serve --port=9999
+1. Para fazer a compilação, use `composer prod`. Isso limpa a pasta, re-gera o SASS, e compila com configurações de
+ produção.
+2. Para fazer o deploy, `composer deploy` entra na pasta de produção, faz o commit para o submódulo e faz o push.
+3. Se você quiser fazer os dois passos de uma vez, use `composer prod-deploy` :grim:
 
-
-### Using a Standard Webserver
-
-The only special consideration that needs to be taken into account for standard
-webservers **in development** is the fact that the URLs generated may not match
-the path at which the site is installed.
-
-This can be solved by overriding the `site.url` configuration option when
-generating the site.
-
-    vendor/bin/sculpin generate --url=http://my.dev.host/blog-skeleton/output_dev
-
-With this option passed, `{{ site.url }}/about` will now be generated as
-`http://my.dev.host/blog-skelton/output_dev/about` instead of `/about`.
+> Nào esqueça de, ao finalizar tudo, fazer um commit que inclua a pasta `output_prod`! A dica é fazer o deploy antes do
+ commit final da última modificação, assim a gente não polui o histórico do repositório de source com commits 
+ "atualizando build do site" :wink:
 
 
-Publishing Production Builds
-----------------------------
-
-When `--env=prod` is specified, the site will be generated in `output_prod/`. This
-is the location of your production build.
-
-    vendor/bin/sculpin generate --env=prod
-
-These files are suitable to be transferred directly to a production host. For example:
-
-    vendor/bin/sculpin generate --env=prod
-    rsync -avze 'ssh -p 999' output_prod/ user@yoursculpinsite.com:public_html
-
-If you want to make sure that rsync deletes files that you deleted locally on the on the remote too, add the `--delete` option to the rsync command:
-
-    rsync -avze 'ssh -p 999' --delete output_prod/ user@yoursculpinsite.com:public_html
-
-In fact, `publish.sh` is provided to get you started. If you plan on deploying to an
-Amazon S3 bucket, you can use `s3-publish.sh` alongside the `s3cmd` utility (must be
-installed separately).
+[statics]: https://github.com/PHPRio/phprio.github.io
