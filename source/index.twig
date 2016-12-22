@@ -26,6 +26,7 @@ use: [posts]
         <article>
             <header>
                 <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+                <time>{{ post.date|date('d/m/Y') }}</time>
             </header>
 
             <div>{{ post.blocks.content|raw }}</div>
