@@ -27,7 +27,7 @@
 
         "clean-prod": "rm -rf output_prod/*",
         "prod"      : ["@sass", "@clean-prod", "sculpin generate --env=prod"],
-        "deploy"    : "cd output_prod; git add -A .; git commit -m 'Atualizando build do site'; git push origin master; cd ..",
+        "deploy"    : "cd output_prod; git add -A .; git commit -m 'Atualizando build do site'; git push origin HEAD:master; cd ..",
         "prod-deploy": ["@prod", "@deploy"]
     }
 }
