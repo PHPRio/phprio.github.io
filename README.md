@@ -54,11 +54,11 @@ Compilação do site
 1. Para fazer a compilação, use `composer prod`. Isso limpa a pasta, re-gera o SASS, e compila com configurações de
  produção.
 2. Para fazer o deploy, `composer deploy` entra na pasta de produção, faz o commit para o submódulo e faz o push.
-3. Se você quiser fazer os dois passos de uma vez, use `composer prod-deploy` :grim:
+3. Se você quiser fazer os dois passos de uma vez, use `composer prod-deploy` :smirk:
 
-> Nào esqueça de, ao finalizar tudo, fazer um commit que inclua a pasta `output_prod`! A dica é fazer o deploy antes do
- commit final da última modificação, assim a gente não polui o histórico do repositório de source com commits 
- "atualizando build do site" :wink:
+> Não esqueça de, ao finalizar tudo, fazer um commit que inclua a pasta `output_prod`!  
+> A dica é fazer o deploy antes do commit final da última modificação, assim a gente não polui o histórico do
+repositório de source com commits "atualizando build do site" :wink:
 
 
 [statics]: https://github.com/PHPRio/phprio.github.io
