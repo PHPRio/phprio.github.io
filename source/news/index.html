@@ -3,7 +3,8 @@ layout: clean
 title: Arquivo de News
 generator: pagination
 pagination:
-    max_per_page: 3
+    provider: data.posts
+    max_per_page: 15
 use: [posts]
 ---
 
@@ -18,7 +19,7 @@ use: [posts]
     <div class="inner"><h2>Arquivo de News</h2></div>
 </header>
 
-<section id="archive" class="wrapper style5">
+<section id="archive" class="wrapper style5 special">
     <div class="inner">
 
         {% set year = '0' %}

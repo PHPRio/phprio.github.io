@@ -46,6 +46,10 @@ ul {
             }
         }
 
+        &.long li {
+            display: block;
+        }
+
         &.major {
             padding: 1em 0;
 

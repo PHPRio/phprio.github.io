@@ -34,6 +34,13 @@ header {
         color: _palette(fg-light);
         position: relative;
         top: -0.25em;
+
+        i.fa {
+            padding-left: 15px;
+            &:first-of-type {
+                padding-left: 0;
+            }
+        }
     }
 
     h2 + time {

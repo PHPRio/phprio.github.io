@@ -1,0 +1,97 @@
+---
+layout: clean
+title: Palestras do Grupo
+generator: pagination
+pagination:
+    provider: data.talks
+    max_per_page: 12
+use: [talks]
+---
+
+<!-- ------------------------------------------------------------------------------------------------------------------
+  Caro desenvolvedor legal:
+    NÃO RENOMEIE ESTE ARQUIVO PARA .TWIG.
+    Por um bug no lindo do Sculpin, aparentemente as páginas geradas pelo plugin de paginação são criadas com a extensão
+    .twig no final, zoando a navegação do site. Então, sim, você vai ficar sem markup de twig aqui. NEM TENTE.
+------------------------------------------------------------------------------------------------------------------- -->
+
+<header class="random-bg">
+    <div class="inner"><h2>{{ page.title }}</h2></div>
+</header>
+
+<section id="archive" class="wrapper style5 special">
+    <div class="inner">
+
+        <p>
+            Um dos tipos de eventos que organizamos são os Ciclos de Palestras.<br/>
+            A cada novo evento, convidamos a comunidade a submeter palestras, e as mais votadas são selecionadas para
+            participar das talks do mês.
+            <!-- TODO: melhorar esse texto -->
+        </p>
+
+        <ul class="features">
+            {% for talk in page.pagination.items %}
+                    <li>
+                        <h3><a href="{{ talk.url }}">{{ talk.title }}</a></h3>
+                        <h4>{{ talk.subtitle }}</h4>
+                        <div>
+                            Por: {% if talk.author.link %}
+                                <a href="{{ talk.author.link }}" target="_blank">{{ talk.author.name }}</a>
+                            {% else %}
+                                {{ talk.author.name }}
+                            {% endif %}
+                        </div>
+
+                            <div>
+                                Em:
+                                {% if talk.place %}
+                                    {% if talk.event %}
+                                        <a href="{{ talk.event }}" target="_blank">{{ talk.place }}</a>
+                                    {% else %}
+                                        {{ talk.place }}
+                                    {% endif %}
+                                {% endif %}
+                                [{{ talk.date|date('d/m/Y') }}]
+                            </div>
+
+                        {% if talk.slides or talk.gallery %}<br/>{% endif %}
+
+                        {% if talk.slides %}
+                            <a target="_blank" href="{{ talk.slides }}" class="button special icon fa-play-circle">Slides</a>
+                        {% endif %}
+
+                        {% if talk.video %}
+                            <a target="_blank" href="{{ talk.video }}" class="button" title="Vídeo da palestra">
+                                <i class="fa fa-video-camera" aria-hidden="true"></i>
+                            </a>
+                        {% endif %}
+
+                        {% if talk.gallery %}
+                            <a target="_blank" href="{{ talk.gallery }}" class="button" title="Fotos da palestra">
+                                <i class="fa fa-photo" aria-hidden="true"></i>
+                            </a>
+                        {% endif %}
+                    </li>
+            {% endfor %}
+        </ul>
+
+        <aside>
+            {% if page.pagination.previous_page or page.pagination.next_page %}
+                <nav class="article">
+                    {% if page.pagination.previous_page %}
+                        <a class="button small special" href="{{ page.pagination.previous_page.url }}" title="Página anterior">
+                            <span class="title"><i class="fa fa-arrow-left"></i> Página anterior</span>
+                        </a>
+                    {% endif %}
+
+                    {% if page.pagination.next_page %}
+                        <a class="button small special" href="{{ page.pagination.next_page.url }}" title="Próxima página">
+                            <span class="title">Próxima página <i class="fa fa-arrow-right"></i></span>
+                        </a>
+                    {% endif %}
+                </nav>
+            {% endif %}
+        </aside>
+
+    </div>
+</section>

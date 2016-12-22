@@ -1,0 +1,93 @@
+{% extends "clean" %}
+
+{% block head_meta %}
+    <meta name="robots" content="index, follow">
+{% endblock %}
+
+{% block content_wrapper %}
+    <header class="random-bg">
+        <div class="inner">
+            <h2><a href="{{ page.url }}" title="permalink">{{ page.title }}</a></h2>
+            {% if page.subtitle %}<p>{{ page.subtitle }}</p>{% endif %}
+
+            {% if page.slides %}
+                <a href="{{ page.slides }}" class="button special icon fa-play-circle" target="_blank">Slides</a>
+            {% endif %}
+
+            {% if page.video %}
+                <a href="{{ page.video }}" class="button icon fa-video-camera" target="_blank">Vídeo da palestra</a>
+            {% endif %}
+
+            {% if page.gallery %}
+                <a href="{{ page.gallery }}" class="button icon fa-photo" target="_blank">Veja as fotos</a>
+            {% endif %}
+        </div>
+    </header>
+
+    <section class="wrapper style5">
+        <div class="inner">
+            <h3>{{ page.title }}{% if page.subtitle %} - {{ page.subtitle }}{% endif %}</h3>
+
+            <ul class="icons long">
+                <li><i class="fa fa-calendar-check-o"></i> <time>{{ page.date|date('d/m/Y') }}</time></li>
+            {% if page.place %}
+                <li>
+                    <i class="fa fa-map-o"></i>
+                    {% if page.event %}
+                        <a href="{{ page.event }}" target="_blank">{{ page.place }}</a>
+                    {% else %}
+                        {{ page.place }}
+                    {% endif %}
+                </li>
+                <li>
+                    <i class="fa fa-user"></i>
+                    {% if page.author.link %}
+                        <a href="{{ page.author.link }}" target="_blank">{{ page.author.name }}</a>
+                    {% else %}
+                        {{ page.author.name }}
+                    {% endif %}
+                </li>
+            {% endif %}
+            </ul>
+
+            {{ page.blocks.content|raw }}
+        </div>
+    </section>
+
+    <aside>
+        {% if page.tags %}
+            <p class="tags">
+                Tags:
+                {% for tag in page.tags %}
+                    <a href="{{ page.tag_html_index_permalinks[tag] }}">{{ tag }}</a>{% if not loop.last %}, {% endif %}
+                {% endfor %}
+            </p>
+        {% endif %}
+
+        {% if page.previous_post or page.next_post %}
+            <nav class="article">
+                <ul>
+                    {% if page.next_post %}
+                        <li>
+                            Próximo:
+                            <a class="next" href="{{ page.next_post.url }}" title="{{ page.next_post.title }}">
+                                <span class="title">{{ page.next_post.title }}</span>
+                            </a>
+                        </li>
+                    {% endif %}
+
+                    {% if page.previous_post %}
+                        <li>
+                            Anterior:
+                            <a class="previous" href="{{ page.previous_post.url }}"
+                               title="{{ page.previous_post.title }}">
+                                <span class="title">{{ page.previous_post.title }}</span>
+                            </a>
+                        </li>
+                    {% endif %}
+                </ul>
+            </nav>
+        {% endif %}
+    </aside>
+    </article>
+{% endblock %}
