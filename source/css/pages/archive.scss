@@ -1,0 +1,15 @@
+#archive {
+    text-align: center;
+
+    &.tags {
+        text-align: left;
+    }
+
+    h3 {
+        margin-bottom: 0;
+    }
+
+    div + h3 {
+        margin-top: _size(element-margin);
+    }
+}

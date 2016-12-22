@@ -1,0 +1,72 @@
+.features {
+    @include vendor('display', 'flex');
+    @include vendor('flex-wrap', 'wrap');
+    @include vendor('justify-content', 'center');
+    list-style: none;
+    padding: 0;
+    width: 100%;
+
+    li {
+        @include padding(4em, 4em, (0,0,0,2em));
+        display: block;
+        position: relative;
+        text-align: left;
+        width: 50%;
+
+        @for $i from 1 through _misc(max-features) {
+            $j: 0.035 * $i;
+
+            &:nth-child(#{$i}) {
+                background-color: rgba(0,0,0, $j);
+            }
+        }
+
+        &:before {
+            display: block;
+            color: _palette(accent2, fg-bold);
+            position: absolute;
+            left: 1.75em;
+            top: 2.75em;
+            font-size: 1.5em;
+        }
+
+        &:nth-child(1) {
+            border-top-left-radius: 3px;
+        }
+
+        &:nth-child(2) {
+            border-top-right-radius: 3px;
+        }
+
+        &:nth-last-child(1) {
+            border-bottom-right-radius: 3px;
+        }
+
+        &:nth-last-child(2) {
+            border-bottom-left-radius: 3px;
+        }
+
+        @include breakpoint(medium) {
+            @include padding(3em, 2em);
+            text-align: center;
+
+            &:before {
+                left: 0;
+                margin: 0 0 (_size(element-margin) * 0.5) 0;
+                position: relative;
+                top: 0;
+            }
+        }
+
+        @include breakpoint(small) {
+            @include padding(3em, 0);
+            background-color: transparent !important;
+            border-top: solid 2px _palette(border);
+            width: 100%;
+
+            &:first-child {
+                border-top: 0;
+            }
+        }
+    }
+}

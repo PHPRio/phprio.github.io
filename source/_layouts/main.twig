@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html>
+{% include '_head.twig' %}
+<body class="landing">
+
+<div id="page-wrapper">
+
+    <header id="header" class="alt">
+        <h1><a href="/">{{ site.title }}</a></h1>
+        {% include '_header.twig' with { alt: true } %}
+    </header>
+
+    {% block content_wrapper %}
+        {% block content %}{% endblock %}
+    {% endblock %}
+
+    {% include '_footer.twig' %}
+
+</div>
+
+</body>
+</html>

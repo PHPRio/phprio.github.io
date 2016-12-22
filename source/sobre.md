@@ -1,8 +1,8 @@
 ---
-layout: default
-title: About
+layout: clean
+title: Sobre
 
 ---
-# About the Author or Blog
+# Sobre o PHPRio
 
-Here is a little information about the author or the blog.
+TODO :)

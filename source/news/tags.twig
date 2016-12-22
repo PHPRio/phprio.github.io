@@ -1,0 +1,23 @@
+---
+layout: clean
+title: Tags
+use: [posts_tags]
+---
+
+<header class="random-bg">
+    <div class="inner"><h2>Tags das News</h2></div>
+</header>
+
+<section id="archive" class="wrapper style5">
+    <div class="inner">
+        {% for tag,posts in data.posts_tags %}
+            {% set tag_slug = tag|url_encode(true) %}
+
+            <h3><a href="/news/tags/{{ tag_slug }}">{{ tag }}</a></h3>
+
+            {% if site.tag_descriptions[tag_slug] %}
+                <p>{{ site.tag_descriptions[tag_slug] }}</p>
+            {% endif %}
+        {% endfor %}
+    </div>
+</section>

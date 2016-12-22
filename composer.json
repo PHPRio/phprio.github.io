@@ -14,7 +14,9 @@
             "email": "contato@phprio.org"
         }
     ],
-    "process-timeout": 999999999999,
+    "config": {
+        "process-timeout": 0
+    },
     "scripts": {
         "generate"  : "sculpin generate --clean",
         "watch"     : "sculpin generate --clean --server --watch",

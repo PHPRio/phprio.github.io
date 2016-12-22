@@ -6,3 +6,22 @@ title: PHPRio
 subtitle: Grupo de Desenvolvedores PHP do Rio e Grande Rio
 
 google_analytics_tracking_id: false
+
+meses:
+  - Janeiro
+  - Fevereiro
+  - Março
+  - Abril
+  - Maio
+  - Junho
+  - Julho
+  - Agosto
+  - Setembro
+  - Outubro
+  - Novembro
+  - Dezembro
+
+tag_descriptions:
+  evento: Todos os eventos que organizamos.
+  happy-hour: Os happy hours que nós organizamos, juntando a galera para um bate-papo mais descontraído.
+  palestras: Nosso ciclo de palestras, trazendo novos tópicos para serem apresentados e discutidos pelo grupo.

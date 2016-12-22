@@ -1,0 +1,31 @@
+body.landing {
+    #page-wrapper {
+        //@include vendor('background-image', ('linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5))', 'url("../../images/banner.jpg")'));
+        //background: no-repeat fixed center center;
+        //background-size: cover;
+        padding-top: 0;
+    }
+
+    #footer {
+        background-color: darken(transparentize(_palette(bg), 0.1), 8);
+    }
+}
+
+body.is-mobile {
+    &.landing {
+        #page-wrapper {
+            background: none;
+        }
+
+        #banner,
+        .wrapper.style4 {
+            //@include vendor('background-image', ('linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5))', 'url("../../images/banner.jpg")'));
+            //background: no-repeat center center;
+            //background-size: cover;
+        }
+
+        #footer {
+            background-color: darken(_palette(bg), 8);
+        }
+    }
+}

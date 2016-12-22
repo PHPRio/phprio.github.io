@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+{% include '_head.twig' %}
+<body>
+
+<div id="page-wrapper">
+
+    {% include '_header.twig' %}
+
+    <article id="main" class="clean">
+        {% block content_wrapper %}
+            {% block content %}{% endblock %}
+        {% endblock %}
+
+        <!-- Exemplo:
+        <header>
+            <h2>Generic Page</h2>
+            <p>Aliquam ut ex ut interdum donec amet imperdiet eleifend</p>
+        </header>
+        <section class="wrapper style5">
+            <div class="inner">
+                <h3>Lorem ipsum dolor</h3>
+                <p>Vestibulum ultrices risus velit[...].</p>
+                <hr/>
+                <p>Vestibulum ultrices risus velit[...].</p>
+            </div>
+        </section>
+        -->
+    </article>
+
+    {% include '_footer.twig' %}
+
+</div>
+
+</body>
+</html>

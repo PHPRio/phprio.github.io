@@ -1,0 +1,156 @@
+#banner {
+    @include vendor('display', 'flex');
+    @include vendor('flex-direction', 'column');
+    @include vendor('justify-content', 'center');
+    cursor: default;
+    height: 550px;
+    min-height: 35em;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+
+    .inner {
+        width: 35%;
+        min-width: 400px;
+        padding: _size(element-margin) 0 0 0;
+    }
+
+    h2 {
+        @include vendor('transform', 'scale(1)');
+        @include vendor('transition', ('transform 0.5s ease', 'opacity 0.5s ease'));
+        display: inline-block;
+        font-size: 1.75em;
+        opacity: 1;
+        padding: 0.35em 0.8em;
+        position: relative;
+        z-index: 1;
+        text-transform: none;
+
+        &:before, &:after {
+            @include vendor('transition', 'width 0.85s ease');
+            @include vendor('transition-delay', '0.25s');
+            background: _palette(fg-bold);
+            content: '';
+            display: block;
+            height: 2px;
+            position: absolute;
+            width: 100%;
+        }
+
+        &:before {
+            top: 0;
+            left: 0;
+        }
+
+        &:after {
+            bottom: 0;
+            right: 0;
+        }
+    }
+
+    img {
+        max-height: 100px;
+        vertical-align: middle;
+        margin-top: -20px;
+        margin-right: 20px;
+    }
+
+    p {
+        letter-spacing: _size(letter-spacing-alt);
+        text-transform: uppercase;
+
+        a {
+            color: inherit;
+        }
+    }
+
+    .more {
+        @include vendor('transition', ('transform 0.75s ease', 'opacity 0.75s ease'));
+        @include vendor('transition-delay', '3.5s');
+        @include vendor('transform', 'translateY(0)');
+        border: none;
+        bottom: 0;
+        color: inherit;
+        font-size: 0.8em;
+        height: 8.5em;
+        left: 50%;
+        letter-spacing: _size(letter-spacing-alt);
+        margin-left: -8.5em;
+        opacity: 1;
+        outline: 0;
+        padding-left: _size(letter-spacing-alt);
+        position: absolute;
+        text-align: center;
+        text-transform: uppercase;
+        width: 16em;
+        z-index: 1;
+
+        &:after {
+            background: url('images/arrow.svg') no-repeat center;
+            background-size: contain;
+            bottom: 4em;
+            content: '';
+            display: block;
+            height: 1.5em;
+            left: 50%;
+            margin: 0 0 0 -0.75em;
+            position: absolute;
+            width: 1.5em;
+        }
+    }
+
+    &:after {
+        @include vendor('pointer-events', 'none');
+        @include vendor('transition', 'opacity #{_duration(fadein)} ease-in-out');
+        @include vendor('transition-delay', '1.25s');
+        content: '';
+        background: _palette(bg);
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        opacity: 0;
+    }
+
+    @include breakpoint(small) {
+        @include padding(7em, 3em);
+        height: auto;
+        min-height: 0;
+
+        h2 {
+            font-size: 1.25em;
+        }
+
+        br {
+            display: none;
+        }
+
+        .more {
+            display: none;
+        }
+    }
+}
+
+body.is-loading {
+    #banner {
+        h2 {
+            @include vendor('transform', 'scale(0.95)');
+            opacity: 0;
+
+            &:before, &:after {
+                width: 0;
+            }
+        }
+
+        .more {
+            @include vendor('transform', 'translateY(8.5em)');
+            opacity: 0;
+        }
+
+        &:after {
+            opacity: 1;
+        }
+    }
+}

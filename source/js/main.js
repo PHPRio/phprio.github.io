@@ -29,7 +29,7 @@
         // Randomized header background
         var totalBackgrounds = 6;
         var randBg = Math.floor(Math.random() * totalBackgrounds);
-        $banner.css('backgroundImage', 'url(/images/bg/'+randBg+'.jpg)');
+        $('.random-bg').css('backgroundImage', 'url(/images/bg/'+randBg+'.jpg)');
 
         // Mobile?
         if (skel.vars.mobile) {
