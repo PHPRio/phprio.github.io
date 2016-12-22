@@ -58,6 +58,7 @@
     p {
         letter-spacing: _size(letter-spacing-alt);
         text-transform: uppercase;
+        padding: 0 _size(element-margin);
 
         a {
             color: inherit;
