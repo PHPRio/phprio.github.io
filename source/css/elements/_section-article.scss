@@ -38,7 +38,7 @@ header {
 
     h2 + time {
         margin-top: _size(element-margin) * -1;
-        padding-top: 5px;
+        padding-top: _size(element-margin) / 2;
         font-size: 0.9em;
         font-style: italic;
         display: block;

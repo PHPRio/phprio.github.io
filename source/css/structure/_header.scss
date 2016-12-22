@@ -1,6 +1,6 @@
 #header {
     @include vendor('transition', 'background-color #{_duration(transitions)} ease');
-    background: _palette(bg);
+    background: _palette(accent5, bg);
     height: 3em;
     left: 0;
     line-height: 3em;
@@ -17,6 +17,11 @@
         position: absolute;
         top: 0;
         text-transform: none;
+
+        img {
+            max-height: 30px;
+            vertical-align: text-bottom;
+        }
 
         a {
             border: 0;
