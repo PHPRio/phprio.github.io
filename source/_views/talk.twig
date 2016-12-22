@@ -19,7 +19,7 @@
             {% endif %}
 
             {% if page.gallery %}
-                <a href="{{ page.gallery }}" class="button icon fa-photo" target="_blank">Veja as fotos</a>
+                <a href="{{ page.gallery }}" class="button icon fa-camera" target="_blank">Veja as fotos</a>
             {% endif %}
         </div>
     </header>
@@ -55,15 +55,6 @@
     </section>
 
     <aside>
-        {% if page.tags %}
-            <p class="tags">
-                Tags:
-                {% for tag in page.tags %}
-                    <a href="{{ page.tag_html_index_permalinks[tag] }}">{{ tag }}</a>{% if not loop.last %}, {% endif %}
-                {% endfor %}
-            </p>
-        {% endif %}
-
         {% if page.previous_post or page.next_post %}
             <nav class="article">
                 <ul>
