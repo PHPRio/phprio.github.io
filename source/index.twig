@@ -43,6 +43,7 @@ use: [posts]
 </section>
 
 <!-- TODO: Two / Quem somos? -->
+<!--
 <section id="two" class="wrapper alt style2">
     <section class="spotlight">
         <div class="image"><img src="images/pic03.jpg" alt="" /></div>
@@ -53,55 +54,88 @@ use: [posts]
         </div>
     </section>
 </section>
+-->
 
 <!-- TODO: talvez aqui fique a lista dos nossos canais de contato? -->
 <a name="canais"></a>
 <section id="three" class="wrapper style3 special">
     <div class="inner">
         <header class="major">
-            <h2>Accumsan mus tortor nunc aliquet</h2>
-            <p>Aliquam ut ex ut augue consectetur interdum. Donec amet imperdiet eleifend<br />
-                fringilla tincidunt. Nullam dui leo Aenean mi ligula, rhoncus ullamcorper.</p>
+            <h2>Nossos canais</h2>
+            <p>
+                Seja para tirar uma dúvida relacionada, se inteirar das novidades ou conhecer a comunidade de PHP do Rio
+                de Janeiro, veja os canais nos quais podemos ser encontrados:
+            </p>
         </header>
         <ul class="features">
             <li class="icon fa-paper-plane-o">
-                <h3>Arcu accumsan</h3>
-                <p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
+                <h3><a href="{{ site.links.telegram }}" target="_blank">Telegram</a></h3>
+                <p>
+                    Com mais de 350 membros ativos, este é o local onde as discussões mais cotidianas acontecem.
+                    Amizades são fortalecidas aqui, e eventualmente, alguns trolls também são banidos <i class="fa fa-hand-peace-o"></i>
+                </p>
             </li>
-            <li class="icon fa-laptop">
-                <h3>Ac Augue Eget</h3>
-                <p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
+            <li class="icon fa-comments-o">
+                <h3><a href="{{ site.links.groups }}" target="_blank">Lista de emails</a></h3>
+                <p>
+                    Onde o grupo nasceu. No Google Groups mantemos discussões, dúvidas, e anúncios do grupo.
+                    É o preferido por quem não curte a agitação do Telegram.
+                </p>
             </li>
-            <li class="icon fa-code">
-                <h3>Mus Scelerisque</h3>
-                <p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
+            <li class="icon fa-meetup">
+                <h3><a href="{{ site.links.meetup }}" target="_blank">Meetup.com</a></h3>
+                <p>
+                    Na plataforma do Meetup nós divulgamos <i>todos</i> os eventos do grupo. É o local para acompanhar
+                    quando serão os próximos encontros, quem vai, e se inscrever para não perder seu lugar.
+                </p>
             </li>
-            <li class="icon fa-headphones">
-                <h3>Mauris Imperdiet</h3>
-                <p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
+            <li class="icon fa-medium">
+                <h3><a href="{{ site.links.medium }}">Medium</a></h3>
+                <p>Também temos um blog colaborativo! Postamos conteúdos mais elaborados sobre PHP e afins por lá.</p>
             </li>
-            <li class="icon fa-heart-o">
-                <h3>Aenean Primis</h3>
-                <p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
+            <li class="icon fa-twitter">
+                <h3><a href="{{ site.links.twitter }}">Twitter</a></h3>
+                <p>Usamos o microblog como uma forma ágil de fazer anúncios e postar novidades do grupo.</p>
             </li>
-            <li class="icon fa-flag-o">
-                <h3>Tortor Ut</h3>
-                <p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
+            <li class="icon fa-facebook">
+                <h3><a href="{{ site.links.facebook }}">Facebook</a></h3>
+                <p>
+                    Para atingir novos públicos, criamos nossos grandes eventos no Facebook.
+                    Também postamos fotos e novidades na página oficial do PHPRio.
+                </p>
+            </li>
+            <li class="icon fa-github">
+                <h3><a href="{{ site.links.github }}" target="_blank">GitHub</a></h3>
+                <p>
+                    Alguns projetos de múltiplas mãos que nasceram sob o teto do PHPRio ficam organizados no GitHub -
+                    incluindo este próprio site!
+                </p>
+            </li>
+            <li class="icon fa-linkedin">
+                <h3><a href="{{ site.links.linkedin }}" target="_blank">LinkedIn</a></h3>
+                <p>
+                    Temos também um Grupo no LinkedIn, para mostrar nossa força na cena de TI do Rio de Janeiro.
+                </p>
             </li>
         </ul>
     </div>
 </section>
 
-<!-- TODO: CTA/IDK -->
+<!-- CTA -->
 <section id="cta" class="wrapper style4">
     <div class="inner">
         <header>
-            <h2>Arcue ut vel commodo</h2>
-            <p>Aliquam ut ex ut augue consectetur interdum endrerit imperdiet amet eleifend fringilla.</p>
+            <h2>Você já participa do grupo?</h2>
+            <p>
+                Entre em contato conosco, venha nos encontrar!<br/>
+                Você também pode <a href="{{ site.links.vagas }}" target="_blank">divulgar vagas relacionadas a PHP</a>
+                conosco.
+            </p>
         </header>
         <ul class="actions vertical">
-            <li><a href="#" class="button fit special">Activate</a></li>
-            <li><a href="#" class="button fit">Learn More</a></li>
+            <li><a target="_blank" href="{{ site.links.telegram }}" class="button fit special icon fa-paper-plane-o">Converse</a></li>
+            <li><a target="_blank" href="{{ site.links.groups }}" class="button fit icon fa-envelope-o">Discuta</a></li>
+            <li><a target="_blank" href="{{ site.links.meetup }}" class="button fit icon fa-handshake-o">Aprenda</a></li>
         </ul>
     </div>
 </section>
