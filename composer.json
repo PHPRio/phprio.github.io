@@ -25,7 +25,7 @@
         "sass"      : "node-sass --source-map true --source-map-contents --output-style=compressed -o source/css source/css/main.scss",
         "sass-watch": "node-sass --source-map true --source-map-contents --output-style=compressed -o source/css  --watch source/css/main.scss",
 
-        "clean-prod": "rm -rf output_prod/*",
+        "clean-prod": "find output_prod/ ! -name 'CNAME' ! -name '.git' ! -name 'README.md' ! -name 'output_prod' -exec rm -rf {} +",
         "prod"      : ["@sass", "@clean-prod", "sculpin generate --env=prod"],
         "deploy"    : "cd output_prod; git add -A .; git commit -m 'Atualizando build do site'; git push origin HEAD:master; cd ..",
         "prod-deploy": ["@prod", "@deploy"]
