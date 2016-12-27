@@ -1,2 +1,10 @@
 /vendor/
 /output_dev/
+
+# Eclipse
+.buildpath
+.project
+.settings
+
+# VI
+*.swp
