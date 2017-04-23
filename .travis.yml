@@ -17,7 +17,7 @@ before_deploy:
   - git config --file=.gitmodules submodule.output_prod.url https://$GH_TOKEN:@github.com/phprio/phprio.github.io.git
   - git submodule sync
   - git submodule update --init --recursive --remote
-  - git config user.name "Travis-CI"
-  - git config user.email "travis.ci@phprio.org"
+  - git config --global user.name "Travis-CI"
+  - git config --global user.email "travis.ci@phprio.org"
   - composer install
   - composer prod-deploy
