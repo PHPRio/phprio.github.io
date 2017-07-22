@@ -51,6 +51,9 @@ Compilação do site
 
 ### Produção
 
+[![Build Status](https://travis-ci.org/PHPRio/site.svg?branch=master)](https://travis-ci.org/PHPRio/site)  
+A build está sendo feita automaticamente no Travis.
+
 1. Para fazer a compilação, use `composer prod`. Isso limpa a pasta, re-gera o SASS, e compila com configurações de
  produção.
 2. Para fazer o deploy, `composer deploy` entra na pasta de produção, faz o commit para o submódulo e faz o push.
