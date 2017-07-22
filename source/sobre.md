@@ -1,9 +1,7 @@
 ---
-layout: clean
-title: Sobre
-
+layout: with_header
+title: Sobre o PHPRio
 ---
-# Sobre o PHPRio
 
 O PHPRio é o conjunto de todas as pessoas que participam de alguma forma da
 comunidade comparecendo a nossos eventos, codando algo público, comentando em

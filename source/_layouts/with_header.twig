@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html>
+{% include '_head.twig' %}
+<body>
+
+<div id="page-wrapper">
+
+    {% include '_header.twig' %}
+
+    <article id="main" class="clean">
+		<header class="random-bg">
+			<div class="inner"><h2>{{ page.title }}</h2></div>
+		</header>
+
+		<section class="wrapper style5">
+			<div class="inner">
+				{% block content_wrapper %}
+				    {% block content %}{% endblock %}
+				{% endblock %}
+			</div>
+		</section>
+	</article>
+
+    {% include '_footer.twig' %}
+</div>
+</body>
+</html>
