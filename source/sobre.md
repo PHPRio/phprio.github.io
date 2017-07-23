@@ -9,6 +9,9 @@ comunidade comparecendo a nossos eventos, codando algo público, comentando em
 redes sociais ou contribuindo de alguma forma para a organização de nossos
 eventos e divulgação do PHP em terras fluminenses.
 
+Você pode consultar uma lista dos [nossos membros no Meetup][members], assim
+como ver também os [organizadores principais][head-meetup] dos
+[eventos](/eventos).
 
 ## Tá, mas... O que é PHP?
 [PHP] é uma linguagem de programação, scriptada, focada em resolver os problemas
@@ -19,6 +22,8 @@ histórico profissional online. Teve crescente adoção das comunidades open-sou
 e cresceu, [se tornando][php-stats] a [linguagem mais utilizada][stats] nos
 servidores de todo o mundo.
 
+[members]: https://www.meetup.com/PHP-Rio/members/
+[head-meetup]: https://www.meetup.com/PHP-Rio/members/?op=leaders
 [php]: http://php.net/manual/en/history.php.php
 [rasmus-lerdorf]: https://en.wikipedia.org/wiki/Rasmus_Lerdorf
 [php-stats]: http://php.net/usage.php
