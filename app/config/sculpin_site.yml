@@ -4,6 +4,7 @@
 
 title: PHPRio
 subtitle: Grupo de Desenvolvedores PHP do Rio e Grande Rio
+url: https://php.rio
 
 google_analytics_tracking_id: false
 
@@ -20,6 +21,7 @@ meses:
   - Outubro
   - Novembro
   - Dezembro
+
 
 tag_descriptions:
   evento: Todos os eventos que organizamos.
