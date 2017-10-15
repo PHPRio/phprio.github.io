@@ -9,9 +9,17 @@ comunidade comparecendo a nossos eventos, codando algo público, comentando em
 redes sociais ou contribuindo de alguma forma para a organização de nossos
 eventos e divulgação do PHP em terras fluminenses.
 
+### Membros e organizadores
 Você pode consultar uma lista dos [nossos membros no Meetup][members], assim
 como ver também os [organizadores principais][head-meetup] dos
 [eventos](/eventos).
+
+Atualmente, as tarefas de eventos, organização e moderação são tocadas pelos seguintes membros, em ordem alfabética:
+
+- Daiane Alves
+- [Igor Santos](http://igorsantos.com.br)
+- Raphael de Almeida
+- Vitor Mattos
 
 ## Tá, mas... O que é PHP?
 [PHP] é uma linguagem de programação, scriptada, focada em resolver os problemas
