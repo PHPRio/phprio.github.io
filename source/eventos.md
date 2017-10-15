@@ -34,7 +34,7 @@ nossos eventos.
 
 
 ## Boteco PHP
-<img src="/images/bolacha.jpg" align="right" alt="Bolacha do Boteco PHP"/>
+<a href="/images/bolacha.png" target="_blank"><img src="/images/bolacha.jpg" align="right" alt="Bolacha do Boteco PHP"/></a>
 Também organizamos mensalmente um evento mais informal, para nos reunir e
 discutir as novidades do mercado, e fomentar os eventos ao vivo e online.
 Conversamos sobre a linguagem, trabalho, eventos, e tudo mais.
