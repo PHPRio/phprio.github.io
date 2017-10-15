@@ -1,5 +1,8 @@
 sculpin_content_types:
   posts:
     permalink: news/:year-:month-:day/:filename/
+    taxonomies:
+      - tags
   talks:
     permalink: talks/:year-:month-:day/:filename/
+    taxonomies:

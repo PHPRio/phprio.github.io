@@ -64,4 +64,9 @@ A build está sendo feita automaticamente no Travis.
 repositório de source com commits "atualizando build do site" :wink:
 
 
+Desenvolvimento e como contribuir
+---------------------------------
+Veja o `CONTRIBUTING.md` para detalhes sobre como desenvolver e contribuir com o site.
+
+
 [statics]: https://github.com/PHPRio/phprio.github.io
