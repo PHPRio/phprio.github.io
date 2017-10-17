@@ -16,10 +16,10 @@ como ver também os [organizadores principais][head-meetup] dos
 
 Atualmente, as tarefas de eventos, organização e moderação são tocadas pelos seguintes membros, em ordem alfabética:
 
-- Daiane Alves
+- [Daiane Alves](https://twitter.com/DaianeAlvesRJ)
 - [Igor Santos](http://igorsantos.com.br)
-- Raphael de Almeida
-- Vitor Mattos
+- [Raphael de Almeida](https://twitter.com/raph_almeida)
+- [Vitor Mattos](https://github.com/vitormattos)
 
 ## Tá, mas... O que é PHP?
 [PHP] é uma linguagem de programação, scriptada, focada em resolver os problemas
