@@ -23,8 +23,7 @@
             <p class="tags">
                 Tags:
                 {% for tag in page.tags %}
-                    {% set tag_slug = tag|url_encode(true) %}
-                    <a href="/news/tags/{{ tag_slug }}">{{ tag }}</a>{% if not loop.last %}, {% endif %}
+                    <a href="{{ page.tag_twig_index_permalinks[tag] }}">{{ tag }}</a>{% if not loop.last %}, {% endif %}
                 {% endfor %}
             </p>
         {% endif %}
