@@ -23,7 +23,8 @@
             <p class="tags">
                 Tags:
                 {% for tag in page.tags %}
-                    <a href="{{ page.tag_html_index_permalinks[tag] }}">{{ tag }}</a>{% if not loop.last %}, {% endif %}
+                    {% set tag_slug = tag|url_encode(true) %}
+                    <a href="/news/tags/{{ tag_slug }}">{{ tag }}</a>{% if not loop.last %}, {% endif %}
                 {% endfor %}
             </p>
         {% endif %}
