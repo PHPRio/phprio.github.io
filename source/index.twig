@@ -35,7 +35,7 @@ use: [posts]
                 <p class="tags">
                     Tags:
                     {% for tag in post.tags %}
-                        <a href="{{post.tag_html_index_permalinks[tag] }}">{{ tag }}</a>{% if not loop.last %}, {% endif %}
+                        <a href="{{ post.tag_twig_index_permalinks[tag] }}">{{ tag }}</a>{% if not loop.last %}, {% endif %}
                     {% endfor %}
                 </p>
             {% endif %}

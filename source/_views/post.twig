@@ -23,7 +23,7 @@
             <p class="tags">
                 Tags:
                 {% for tag in page.tags %}
-                    <a href="{{ page.tag_html_index_permalinks[tag] }}">{{ tag }}</a>{% if not loop.last %}, {% endif %}
+                    <a href="{{ page.tag_twig_index_permalinks[tag] }}">{{ tag }}</a>{% if not loop.last %}, {% endif %}
                 {% endfor %}
             </p>
         {% endif %}
