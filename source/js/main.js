@@ -27,7 +27,7 @@
         });
 
         // Randomized header background
-        var totalBackgrounds = 11;
+        var totalBackgrounds = 7;
         var randBg = Math.floor(Math.random() * totalBackgrounds);
         $('.random-bg').css('backgroundImage', 'url(/images/bg/'+randBg+'.jpg)');
 
