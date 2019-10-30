@@ -6,5 +6,8 @@
 .project
 .settings
 
+# JetBrains (na verdade dá pra incluir parte no repositório, mas não tem necessidade por hora)
+.idea
+
 # VI
 *.swp
