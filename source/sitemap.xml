@@ -50,6 +50,7 @@ permalink: sitemap.xml
     </url>
     {% endfor %}
 
+<!--
     <url>
         <loc>{{ site.url }}/talks</loc>
         <changefreq>monthly</changefreq>
@@ -63,4 +64,5 @@ permalink: sitemap.xml
         <priority>0.8</priority>
     </url>
     {% endfor %}
+-->
 </urlset>

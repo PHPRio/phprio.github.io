@@ -27,6 +27,7 @@ permalink: atom.xml
     </entry>
     {% endfor %}
 
+<!--
     {% for talk in data.talks|slice(0, 10) %}
     <entry>
         <title type="html"><![CDATA[{{ talk.title }}]]></title>
@@ -36,5 +37,5 @@ permalink: atom.xml
         <content type="html"><![CDATA[{{ talk.blocks.content|raw }}]]></content>
     </entry>
     {% endfor %}
-
+-->
 </feed>
