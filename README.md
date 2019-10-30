@@ -29,7 +29,7 @@ _muidifício_.
 2. Entre na pasta, e prepare o submódulo: `git submodule init; git submodule update`
 3. Dependências: `composer install` (espero que você tenha o Composer instalado, né? Senão, veja [a seguir](#Composer))
 4. _[opcional]_ Se você for mexer no layout, você vai precisar do `node-sass` ou algum outro compilador de SASS. 
-Instale-o pelo NPM ou Yarn: `npm install --global node-sass` ou `yarn global add node-sass`.
+Instale-o pelo NPM: `npm install --global node-sass`.
 
 > Não tente seguir as instruções do site do Sculpin. Elas estão bem desatualizadas (mandando usar um phar, por exemplo).
 
