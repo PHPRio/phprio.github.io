@@ -11,9 +11,7 @@
         margin-top: _size(element-margin);
     }
 
-    ul.features {
-        li {
-            @include padding(2em, 2em, (0,0,2em,0));
-        }
+    ul.features > li {
+        @include padding(2em, 2em, (0,0,2em,0));
     }
 }
