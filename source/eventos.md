@@ -24,7 +24,7 @@ tecnologia, para divulgar novos conteúdos, tópicos que estamos estudando, ou
 qualquer coisa sobre a profissão que consideramos relevante espalhar ao público.
 
 Para submeter sua palestra, abra uma issue no nosso **[repositório de Call For
-Presentations][cfp]**. Lá você também pode votar em apresentações em aberto, ou
+Presentations]({{site.links.cfp}})**. Lá você também pode votar em apresentações em aberto, ou
 se candidatar para apresentar sobre um assunto interessante e que ainda não
 tem um speaker.
 
@@ -47,7 +47,6 @@ adicionando o calendário dos eventos do Meetup ao seu ([ical], [Outlook]).
 Também é possível acompanhar todos os eventos que você der RSVP no Meetup.com, independente do grupo: [veja aqui como encontrar o seu calendário do Meetup][ical-guia].
 
 
-[cfp]: https://github.com/PHPRio/CFP
 [ical]: webcal://www.meetup.com/PHP-Rio/events/ical/
 [outlook]: https://www.meetup.com/PHP-Rio/events/ical/
 [ical-guia]: https://help.meetup.com/hc/en-us/articles/360002879851-Exporting-a-group-or-personal-event-calendar

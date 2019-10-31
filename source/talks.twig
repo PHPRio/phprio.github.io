@@ -1,0 +1,70 @@
+---
+layout: with_header
+title: Palestras Anteriores
+sectionId: archive
+---
+
+<p class="align-left">
+    Um dos tipos de <a href="/eventos">eventos que organizamos no PHPRio</a> são os Ciclos de Palestras.<br/>
+    A cada novo evento, <a href="{{site.links.cfp}}">convidamos a comunidade a submeter palestras</a>, e as mais votadas são selecionadas para
+    participar das talks do mês.
+    <!-- TODO: melhorar esse texto -->
+</p>
+
+<ul class="features" id="talks">
+    <template id="talk">
+        <li>
+            <h3><a href=""><!-- Título --></a></h3>
+            <h4><!-- Subtítulo? --></h4>
+            <div class="body"></div>
+            <div class="labels"></div>
+        </li>
+    </template>
+</ul>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.0/showdown.min.js" integrity="sha256-LSUpTY0kkXGKvcBC9kbmgibmx3NVVgJvAEfTZbs51mU=" crossorigin="anonymous"></script>
+<script>
+    const talks = document.querySelector('#talks')
+    const template = talks.querySelector('template')
+    const markdown = new showdown.Converter()
+
+    fetch('https://api.github.com/repos/PHPRio/CFP/issues?state=closed&labels=Palestras')
+        .then(r => r.json())
+        .then(githubList => githubList.forEach(issue => {
+            const talk = document.importNode(template.content, true)
+            talk.querySelector('h3 a').href = issue.html_url
+            talk.querySelector('h3 a').innerText = issue.title
+            // talk.querySelector('h4').innerHTML = `Por @${issue.user.login}`
+            talk.querySelector('h4').remove()
+
+            //limpando a descrição da issue pra ficar mais apresentável na página
+            const body = issue.body
+                .replace(/(Nível|Título|Palavras-chaves?):.*\r\n/gi, '')
+                .replace(/Descrição da palestra:.*\r\n/i, '')
+                .replace(/(Palestrante:)/i, '<br/>$1')
+                .replace(/#(\d+)/, 'https://github.com/PHPRio/CFP/issues/$1')
+	            .replace(/\[?(Slides|Referências?|Vídeo|GitHub)(:\s*|\]\()(http.+)\)?/gi,
+		            '<a target="_blank" href="$3" class="button icon fa-play-circle">$1</a>')
+            talk.querySelector('.body').innerHTML = markdown.makeHtml(body)
+
+            const labels = talk.querySelector('.labels')
+            issue.labels
+                .filter(l => l.name != 'Palestras')
+                .forEach(label => {
+                    const el = document.createElement('a')
+                    el.target = '_blank'
+	                el.classList.add('button', 'small', 'icon', 'fa-hashtag')
+                    el.style.backgroundColor = `#${label.color}`
+	                el.href = `{{site.links.cfp}}/issues?labels=Palestras,${label.name}`
+	                el.innerText = label.name
+                    labels.appendChild(el)
+                })
+            talks.appendChild(talk)
+        }))
+        .catch(e => {
+        	console.error(e)
+            if (confirm('Tivemos um problema pra pegar a lista de palestras no Repositório de CFP. Quer visitá-lo?')) {
+                window.location = '{{site.links.cfp}}/issues?labels=Palestras'
+            }
+        })
+</script>
