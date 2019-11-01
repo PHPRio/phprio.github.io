@@ -3,7 +3,7 @@
     @include vendor('flex-direction', 'column');
     @include vendor('justify-content', 'center');
     cursor: default;
-    height: 550px;
+    height: 450px;
     min-height: 35em;
     overflow: hidden;
     position: relative;
@@ -59,6 +59,7 @@
         letter-spacing: _size(letter-spacing-alt);
         text-transform: uppercase;
         padding: 0 _size(element-margin);
+        font-weight: bold;
 
         a {
             color: inherit;

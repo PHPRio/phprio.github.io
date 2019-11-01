@@ -1,5 +1,5 @@
 ---
-use: ["posts","talks"]
+use: ["posts"]
 permalink: sitemap.xml
 ---
 

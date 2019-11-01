@@ -1,10 +1,6 @@
 ---
 layout: main
 title: Home
-generator: pagination
-pagination:
-    max_per_page: 1
-use: [posts]
 ---
 
 <!-- Banner de apresentação -->
@@ -13,12 +9,35 @@ use: [posts]
         <img src="/images/logo.png" alt="Logo do PHPRio" class="logo"/>
         <h2>{{ site.title }}</h2>
         <p>{{ site.subtitle }}</p>
+{#        <ul class="actions">#}
+{#            <li><a href="#canais" class="button special">Veja como participar</a></li>#}
+{#        </ul>#}
+    </div>
+</section>
+
+<section id="one" class="wrapper style1">
+    <div class="inner align-center">
+        <p style="font-weight: bold">
+            O PHPRio é o grupo de todas as pessoas que participam da comunidade
+            PHP na cidade do Rio e Grande Rio. Todos contribuem, de diversas formas,
+            para a organização de nossos eventos e divulgação do PHP em terras fluminenses.
+
+        </p>
+        <p>
+            <a href="/sobre">Saiba mais sobre o grupo</a>
+        </p>
+
         <ul class="actions">
-            <li><a href="#canais" class="button special">Veja como participar</a></li>
+            <li><a href="/talks" class="button"><i class="fa fa-users"></i> Eventos</a></li>
+            <li><a href="/talks" class="button"><i class="fa fa-presentation"></i> Palestras</a></li>
+            <li><a href="/vagas" class="button"><i class="fa fa-user-tie"></i> Divulgar vaga</a></li>
+            <li><a href="/parceiros" class="button"><i class="fa fa-briefcase"></i> Parceiros</a></li>
+            <li><a href="/campanha-2019" class="button big special"><i class="fa fa-hand-holding-usd"></i> Campanha do Domínio</a></li>
         </ul>
     </div>
 </section>
 
+{#
 <!-- Último post -->
 <section id="one" class="wrapper style1">
     <div class="inner">
@@ -56,13 +75,12 @@ use: [posts]
     </section>
 </section>
 -->
+#}
 
-<!-- TODO: talvez aqui fique a lista dos nossos canais de contato? -->
-<a name="canais"></a>
 <section id="three" class="wrapper style3 special">
     <div class="inner">
         <header class="major">
-            <h2>Nossos canais</h2>
+            <h2>Participe pelos nossos canais</h2>
             <p>
                 Seja para tirar uma dúvida relacionada, se inteirar das novidades ou conhecer a comunidade de PHP do Rio
                 de Janeiro, veja os canais nos quais podemos ser encontrados:
@@ -70,14 +88,14 @@ use: [posts]
         </header>
 
         <ul class="features">
-            <li class="icon fa-paper-plane-o">
+            <li class="icon fa-telegram-plane">
                 <h3><a href="{{ site.links.telegram }}" target="_blank">Telegram</a></h3>
                 <p>
                     Com mais de 1000 membros ativos, este é o local onde as discussões mais cotidianas acontecem.
                     Amizades são fortalecidas aqui, e eventualmente, alguns trolls também são banidos <i class="fa fa-hand-peace-o"></i>
                 </p>
             </li>
-            <li class="icon fa-comments-o">
+            <li class="icon fa-comments">
                 <h3><a href="{{ site.links.groups }}" target="_blank">Lista de emails</a></h3>
                 <p>
                     Onde o grupo nasceu. No Google Groups mantemos discussões, dúvidas, e anúncios do grupo.
@@ -91,7 +109,7 @@ use: [posts]
                     quando serão os próximos encontros, quem vai, e se inscrever para não perder seu lugar.
                 </p>
             </li>
-            <li class="icon fa-medium">
+            <li class="icon fa-medium-m">
                 <h3><a href="{{ site.links.medium }}">Medium</a></h3>
                 <p>Também temos um blog colaborativo! Postamos conteúdos mais elaborados sobre PHP e afins por lá.</p>
             </li>
@@ -99,21 +117,21 @@ use: [posts]
                 <h3><a href="{{ site.links.twitter }}">Twitter</a></h3>
                 <p>Usamos o microblog como uma forma ágil de fazer anúncios e postar novidades do grupo.</p>
             </li>
-            <li class="icon fa-facebook">
+            <li class="icon fa-facebook-f">
                 <h3><a href="{{ site.links.facebook }}">Facebook</a></h3>
                 <p>
                     Para atingir novos públicos, criamos nossos grandes eventos no Facebook.
                     Também postamos fotos e novidades na página oficial do PHPRio.
                 </p>
             </li>
-            <li class="icon fa-github">
+            <li class="icon fa-github-alt">
                 <h3><a href="{{ site.links.github }}" target="_blank">GitHub</a></h3>
                 <p>
                     Alguns projetos de múltiplas mãos que nasceram sob o teto do PHPRio ficam organizados no GitHub -
                     incluindo este próprio site!
                 </p>
             </li>
-            <li class="icon fa-linkedin">
+            <li class="icon fa-linkedin-in">
                 <h3><a href="{{ site.links.linkedin }}" target="_blank">LinkedIn</a></h3>
                 <p>
                     Temos também um Grupo no LinkedIn, para mostrar nossa força na cena de TI do Rio de Janeiro.
@@ -135,9 +153,9 @@ use: [posts]
             </p>
         </header>
         <ul class="actions vertical">
-            <li><a target="_blank" href="{{ site.links.telegram }}" class="button fit special icon fa-paper-plane-o">Converse</a></li>
-            <li><a target="_blank" href="{{ site.links.groups }}" class="button fit icon fa-envelope-o">Discuta</a></li>
-            <li><a target="_blank" href="{{ site.links.meetup }}" class="button fit icon fa-handshake-o">Aprenda</a></li>
+            <li><a target="_blank" href="{{ site.links.telegram }}" class="button fit special icon fa-telegram-plane">Converse</a></li>
+            <li><a target="_blank" href="{{ site.links.groups }}" class="button fit icon fa-envelope">Discuta</a></li>
+            <li><a target="_blank" href="{{ site.links.meetup }}" class="button fit icon fa-handshake">Aprenda</a></li>
         </ul>
     </div>
 </section>
