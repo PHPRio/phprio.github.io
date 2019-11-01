@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8b2077b504450545f07fc576bec79145",
+    "content-hash": "8b61b56ffc8973818434841856f9a58a",
     "packages": [
         {
             "name": "dflydev/ant-path-matcher",
@@ -343,12 +343,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/inflector.git",
-                "reference": "45d9b132b262c1d03835cdeefd42938d881556fa"
+                "reference": "ec3a55242203ffa6a4b27c58176da97ff0a7aec1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/inflector/zipball/45d9b132b262c1d03835cdeefd42938d881556fa",
-                "reference": "45d9b132b262c1d03835cdeefd42938d881556fa",
+                "url": "https://api.github.com/repos/doctrine/inflector/zipball/ec3a55242203ffa6a4b27c58176da97ff0a7aec1",
+                "reference": "ec3a55242203ffa6a4b27c58176da97ff0a7aec1",
                 "shasum": ""
             },
             "require": {
@@ -374,16 +374,16 @@
             ],
             "authors": [
                 {
+                    "name": "Guilherme Blanco",
+                    "email": "guilhermeblanco@gmail.com"
+                },
+                {
                     "name": "Roman Borschel",
                     "email": "roman@code-factory.org"
                 },
                 {
                     "name": "Benjamin Eberlei",
                     "email": "kontakt@beberlei.de"
-                },
-                {
-                    "name": "Guilherme Blanco",
-                    "email": "guilhermeblanco@gmail.com"
                 },
                 {
                     "name": "Jonathan Wage",
@@ -402,7 +402,7 @@
                 "singularize",
                 "string"
             ],
-            "time": "2018-06-15T19:03:38+00:00"
+            "time": "2019-10-30T19:59:35+00:00"
         },
         {
             "name": "evenement/evenement",
@@ -651,12 +651,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-fig/log.git",
-                "reference": "d477130b23d419404dbd4bfea1aa557b3236bbc7"
+                "reference": "446d54b4cb6bf489fc9d75f55843658e6f25d801"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-fig/log/zipball/d477130b23d419404dbd4bfea1aa557b3236bbc7",
-                "reference": "d477130b23d419404dbd4bfea1aa557b3236bbc7",
+                "url": "https://api.github.com/repos/php-fig/log/zipball/446d54b4cb6bf489fc9d75f55843658e6f25d801",
+                "reference": "446d54b4cb6bf489fc9d75f55843658e6f25d801",
                 "shasum": ""
             },
             "require": {
@@ -690,7 +690,7 @@
                 "psr",
                 "psr-3"
             ],
-            "time": "2019-10-30T09:18:31+00:00"
+            "time": "2019-11-01T11:05:21+00:00"
         },
         {
             "name": "react/cache",
@@ -2809,7 +2809,7 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=7.0"
+        "php": "^7.2"
     },
     "platform-dev": []
 }

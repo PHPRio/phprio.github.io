@@ -4,7 +4,7 @@
     "type": "project",
     "minimum-stability": "dev",
     "require": {
-	    "php": ">=7.0",
+	    "php": "^7.2",
         "sculpin/sculpin": "^3.0"
     },
     "license": "MIT",
