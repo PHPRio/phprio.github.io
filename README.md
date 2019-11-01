@@ -16,6 +16,8 @@ automaticamente
 Obviamente, fomos pela segunda opção. Para tanto, é necessário que o site seja publicado na raiz de um repositório com
 o nome correto e, pra não misturar os _statics_ com todo o _source_ do site, dividimos o projeto em dois repositórios.  
 Assim, o conteúdo final do site gerado fica em `/output_prod`, que é um submódulo desse aqui.
+
+Também habilitamos uma extensão do Markdown. [Os detalhes do que é possível fazer a mais está disponível na página do processador em PHP usado](https://michelf.ca/projects/php-markdown/extra).
  
 > *Disclaimer:* esse projeto foi baseado no exemplo de Blog Skeleton que tem no [Get Started deles](https://sculpin.io/getstarted).
 

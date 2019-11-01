@@ -4,8 +4,8 @@
     "type": "project",
     "minimum-stability": "dev",
     "require": {
-	"php": ">=7.0",
-        "sculpin/sculpin": "^2.0"
+	    "php": ">=7.0",
+        "sculpin/sculpin": "^3.0"
     },
     "license": "MIT",
     "authors": [
