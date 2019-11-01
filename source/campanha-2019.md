@@ -116,7 +116,7 @@ As doações esse ano serão feitas através do PicPay, plataforma online de pag
 
 
 ### <label for="progresso">Progresso da Campanha: <span class="total"></span></label>
-<progress id="progresso" max="486.89" value="10.89"><span class="total"></span></progress>
+<progress id="progresso" max="486.89" value="200.89"><span class="total"></span></progress>
 <script>
     const valor = 'R$'+document.querySelector('#progresso').value
     document.querySelectorAll('.total').forEach(e => e.innerText = valor)
