@@ -25,6 +25,12 @@ permalink: sitemap.xml
     </url>
 
     <url>
+        <loc>{{ site.url }}/talks</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
         <loc>{{ site.url }}/vagas</loc>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
@@ -39,13 +45,14 @@ permalink: sitemap.xml
     <url>
         <loc>{{ site.url }}/news</loc>
         <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
+        <priority>0.5</priority>
     </url>
+
     {% for post in data.posts %}
     <url>
         <loc>{{ site.url }}{{ post.url }}</loc>
         <lastmod>{{ post.date|date('c') }}</lastmod>
-        <changefreq>weekly</changefreq>
+        <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
     {% endfor %}

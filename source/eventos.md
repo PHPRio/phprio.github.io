@@ -28,8 +28,8 @@ Presentations]({{site.links.cfp}})**. Lá você também pode votar em apresenta�
 se candidatar para apresentar sobre um assunto interessante e que ainda não
 tem um speaker.
 
-<!-- Temos também [um arquivo das principais palestras](/talks) que já rolaram nos
-nossos eventos. -->
+Temos também [um arquivo das palestras](/talks) que já rolaram nos
+nossos eventos.
 
 
 ## Boteco PHP

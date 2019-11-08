@@ -3,9 +3,9 @@ sculpin_content_types:
     permalink: news/:year-:month-:day/:filename/
     taxonomies:
       - tags
-  talks:
-    permalink: talks/:year-:month-:day/:filename/
-    taxonomies:
+#  talks:
+#    permalink: talks/:year-:month-:day/:filename/
+#    taxonomies:
 
 sculpin_markdown:
   parser_class: Sculpin\Bundle\MarkdownBundle\PhpMarkdownExtraParser
