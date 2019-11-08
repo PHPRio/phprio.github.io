@@ -3,9 +3,8 @@ layout: with_header
 title: Apoie o PHPRio
 ---
 
-Você também pode apoiar o PHPRio e ajudar a comunidade a crescer. Para todos os
-casos, se houver interesse em apoiar, entre em contato conosco em um de nossos
-canais no rodapé _(dica: Telegram é o mais ágil)_.
+Você também pode apoiar o PHPRio e ajudar a comunidade a crescer. Venha fazer parte do [hall de empresas parceiras do grupo](/parceiros)!  
+Para todos os casos, se houver interesse em apoiar, entre em contato conosco em um de nossos canais no rodapé _(dica: Telegram é o mais ágil)_.
 
 ## Apoie um meetup
 
@@ -20,9 +19,9 @@ fazermos networking. Sua empresa também pode apoiar nossos eventos patrocinando
 coffee-break.
 
 ### Envie/seja um palestrante
-Nosso [Call For Papers][cfp] está sempre aberto para novas propostas e sugestões.
+Nosso [Call For Papers]({{site.links.cfp}}) está sempre aberto para novas propostas e sugestões.
 Você pode ajudar a movimentar nossos meetups sugerindo temas ou mesmo apresentando
-palestras. Vá ao [nosso repositório][cfp] e crie uma issue lá! 
+palestras. Vá ao [nosso repositório]({{site.links.cfp}}) e crie uma issue lá! 
  
 ## Camisetas
 Sua empresa pode apoiar o PHPRio fornecendo patrocínio para a confecção de
@@ -32,6 +31,3 @@ O logotipo do patrocinador será incluído na camiseta.
 
 ## Outras formas de apoiar
 Se você tem outras ideias de como ajudar o PHPRio a se movimentar e crescer, entre em contato conosco e faça sua proposta!
-
-
-[cfp]: https://github.com/phprio/
