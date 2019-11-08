@@ -49,7 +49,7 @@ permalink: sitemap.xml
     </url>
 
     <url>
-        <loc>{{ site.url }}/coc</loc>
+        <loc>{{ site.url }}/codigo-de-conduta</loc>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>

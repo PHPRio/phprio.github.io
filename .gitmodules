@@ -1,3 +1,6 @@
 [submodule "output_prod"]
 	path = output_prod
 	url = https://github.com/PHPRio/phprio.github.io.git
+[submodule "source/code-of-conduct"]
+	path = source/code-of-conduct
+	url = https://github.com/PHPRio/code-of-conduct.git
