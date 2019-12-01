@@ -23,11 +23,12 @@ a.button img, button img {
 }
 #picpay {
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: center;
     flex-wrap: wrap;
 }
 #picpay > div {
+    flex: 1;
     margin: 10px;
 }
 input[type=number] {
@@ -44,7 +45,16 @@ table {
 table th {
     text-align: right; /* fixing markdown extra issue with header alignment */
 }
+#obrigado {
+    display: none;
+    background-color: lightgreen;
+    font-size: 2em;
+    line-height: 1.5em;
+    text-align: center;
+}
 </style>
+
+<blockquote id="obrigado">Obrigado pela sua doação, em nome de toda a comunidade do PHPRio <i class="icon fa-smile"></i></blockquote>
 
 De tempos em tempos organizamos uma nova campanha de arrecadação de fundos para manter os domínios do grupo.
 
@@ -79,15 +89,17 @@ Estes são os custos - baseados num câmbio aproximado de R$4.10 e IOF de 6.38%:
 
 Contribua!
 ----------
-As doações esse ano serão feitas através do PicPay, plataforma online de pagamentos que não gera taxas de transferência nem pra você, nem pra gente, e permite pagamento até com cartão de crédito. Se você não tem conta, [crie com esse link](http://www.picpay.com/convite?TM7H) - o bônus de indicação será revertido para a campanha, e você ganha R$10 em cashback no primeiro pagamento com cartão!
+As doações esse ano serão feitas preferencialmente através do **PicPay**, plataforma online de pagamentos que não gera taxas de transferência nem pra você, nem pra gente, e permite pagamento até com cartão de crédito. Se você não tem conta, [crie com esse link](http://www.picpay.com/convite?TM7H) - o bônus de indicação será revertido para a campanha, e você ganha R$10 em cashback no primeiro pagamento com cartão!
+
+Se quiser doar transferindo pra uma conta no **Itaú** ou **NuConta**, entre em contato abaixo para pedir os detalhes. O **PayPal** também foi adicionado, mas uma [parte da doação será perdida com tarifas](https://www.paypal.com/br/webapps/mpp/merchant-fees#commercialpayments).
 
 <!-- _momento Criança Esperança_ -->
 <div id="botoes">
     <a class="button special" href="https://picpay.me/igorsantos07/1.00">
-        <img alt="Uma bala" src="https://noto-website-2.storage.googleapis.com/emoji/emoji_u1f36c.png"/> Doar R$1
+        <img alt="Uma bala" src="https://noto-website-2.storage.googleapis.com/emoji/emoji_u1f36c.png"/> Doar R$ 1
     </a>
     <a class="button special" href="https://picpay.me/igorsantos07/5.00">
-        <img alt="Uma pipoca" src="https://noto-website-2.storage.googleapis.com/emoji/emoji_u1f37f.png"/> Doar R$5
+        <img alt="Uma pipoca" src="https://noto-website-2.storage.googleapis.com/emoji/emoji_u1f37f.png"/> Doar R$ 5
     </a>
     <a class="button special" href="https://picpay.me/igorsantos07/10.00">
         <img alt="Um burger" src="https://noto-website-2.storage.googleapis.com/emoji/emoji_u1f354.png"/> Doar R$10
@@ -98,28 +110,38 @@ As doações esse ano serão feitas através do PicPay, plataforma online de pag
 </div>
 
 <div id="picpay">
-    <div>
-        <label for="custom">Outro valor:</label><br/>
-        <input id="custom" type="number" step="0.50" value="50.00">
+    <div class="align-right">
+        <span class="align-center" style="display: inline-block">
+            <input id="custom" type="number" step="0.50" value="50.00" title="Outro valor"/><br/>
+            <a class="button special" style="margin-top: 10px;" href="javascript:window.location='https://picpay.me/igorsantos07/'+document.querySelector('#custom').value">
+                <i class="icon fa-gift"></i> Doar outro valor
+            </a>
+        </span>
+    </div>
+    <div class="align-center">
+        <a href="https://picpay.me/igorsantos07" style="display: inline-block; text-align: center">
+            <img alt="QR Code" src="https://chart.googleapis.com/chart?cht=qr&chl=https://picpay.me/igorsantos07&chs=100x100&chld=L|0"/><br/>
+            Doar no app do PicPay
+        </a>
     </div>
     <div>
-        <button class="big special" onclick="window.location='https://picpay.me/igorsantos07/'+document.querySelector('#custom').value">
-            <img alt="Obrigado!" src="https://noto-website-2.storage.googleapis.com/emoji/emoji_u1f381.png"/> Doar!
-        </button>
-    </div>
-    <div>
-        <a href="https://picpay.me/igorsantos07" style="display: inline-block; text-align: center"><img alt="QR Code" src="https://chart.googleapis.com/chart?cht=qr&chl=https://picpay.me/igorsantos07&chs=100x100&chld=L|0"/><br/>Doar diretamente no PicPay</a>
+        <a class="button" href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=8TE9Q5DZL5YCA&source=url">
+            <i class="icon fa-paypal"></i> Paypal
+        </a>
     </div>
 </div>
 
-> Estes valores serão depositados na conta do organizador da campanha, e diariamente atualizaremos os resultados da campanha aqui.
+> Estes valores serão depositados na conta do organizador da campanha, e sempre atualizaremos os resultados aqui.
 
 
 ### <label for="progresso">Progresso da Campanha: <span class="total"></span></label>
-<progress id="progresso" max="486.89" value="255.89"><span class="total"></span></progress>
+<progress id="progresso" max="486.89" value="280.89"><span class="total"></span></progress>
 <script>
     const valor = 'R$'+document.querySelector('#progresso').value
     document.querySelectorAll('.total').forEach(e => e.innerText = valor)
+    if (window.location.search == '?obrigado') {
+        document.querySelector('#obrigado').style.display = 'block'
+    }
 </script>
 
 ### Para tirar quaisquer dúvidas sobre a campanha, entre em contato:
@@ -127,4 +149,4 @@ As doações esse ano serão feitas através do PicPay, plataforma online de pag
 - Igor Santos ([email](mailto:igorsantos07+campanha@PHPRio.org), [Telegram](https://telegram.me/igorsantos07)), responsável pela campanha
 - o grupo ([Telegram](https://telegram.me/PHPRio), [lista](https://groups.google.com/forum/#!forum/PHPRio-org))
 
-# Muito Obrigado!
+## Muito Obrigado!
