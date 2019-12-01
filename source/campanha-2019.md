@@ -91,7 +91,7 @@ Contribua!
 ----------
 As doações esse ano serão feitas preferencialmente através do **PicPay**, plataforma online de pagamentos que não gera taxas de transferência nem pra você, nem pra gente, e permite pagamento até com cartão de crédito. Se você não tem conta, [crie com esse link](http://www.picpay.com/convite?TM7H) - o bônus de indicação será revertido para a campanha, e você ganha R$10 em cashback no primeiro pagamento com cartão!
 
-Se quiser doar transferindo pra uma conta no **Itaú** ou **NuConta**, entre em contato abaixo para pedir os detalhes. O **PayPal** também foi adicionado, mas uma [parte da doação será perdida com tarifas](https://www.paypal.com/br/webapps/mpp/merchant-fees#commercialpayments).
+Adicionamos os dados de transferência pelo **Itaú** e **NuConta**. O **PayPal** também foi adicionado, mas uma [parte da doação será perdida com tarifas](https://www.paypal.com/br/webapps/mpp/merchant-fees#commercialpayments).
 
 <!-- _momento Criança Esperança_ -->
 <div id="botoes">
@@ -112,9 +112,9 @@ Se quiser doar transferindo pra uma conta no **Itaú** ou **NuConta**, entre em 
 <div id="picpay">
     <div class="align-right">
         <span class="align-center" style="display: inline-block">
-            <input id="custom" type="number" step="0.50" value="50.00" title="Outro valor"/><br/>
+            <input id="custom" type="number" step="0.50" value="50.00" title="Outro valor" class="align-center"/><br/>
             <a class="button special" style="margin-top: 10px;" href="javascript:window.location='https://picpay.me/igorsantos07/'+document.querySelector('#custom').value">
-                <i class="icon fa-gift"></i> Doar outro valor
+                <i class="fas fa-gift"></i> Doar outro valor
             </a>
         </span>
     </div>
@@ -125,8 +125,15 @@ Se quiser doar transferindo pra uma conta no **Itaú** ou **NuConta**, entre em 
         </a>
     </div>
     <div>
+        <span class="button special clear" style="pointer-events: none">
+            <i class="fas fa-piggy-bank"></i>
+            Itaú: Ag 5624, C/C 09071-7
+        </span><br/>
+        <a class="button special" href="https://nubank.com.br/pagar/5xo68/HfXCt7bBc4">
+            <i class="fas fa-credit-card-blank"></i> NuConta
+        </a><br/>
         <a class="button" href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=8TE9Q5DZL5YCA&source=url">
-            <i class="icon fa-paypal"></i> Paypal
+            <i class="fab fa-paypal"></i> Paypal
         </a>
     </div>
 </div>
@@ -135,7 +142,7 @@ Se quiser doar transferindo pra uma conta no **Itaú** ou **NuConta**, entre em 
 
 
 ### <label for="progresso">Progresso da Campanha: <span class="total"></span></label>
-<progress id="progresso" max="486.89" value="280.89"><span class="total"></span></progress>
+<progress id="progresso" max="486.89" value="380.89"><span class="total"></span></progress>
 <script>
     const valor = 'R$'+document.querySelector('#progresso').value
     document.querySelectorAll('.total').forEach(e => e.innerText = valor)

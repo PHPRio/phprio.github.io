@@ -32,3 +32,18 @@
 
 @import "pages/landing";
 @import "pages/archive";
+
+.button {
+    box-shadow: none !important;
+
+    &.clear {
+        background-color: transparent;
+        border: 2px solid #2E3842;
+        color: #2E3842 !important;
+
+        &.special {
+            border-color: #6C88E3;
+            color: #6C88E3 !important;
+        }
+    }
+}
