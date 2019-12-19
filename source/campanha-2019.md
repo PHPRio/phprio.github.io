@@ -40,7 +40,7 @@ input[type=number] {
     height: 2em;
 }
 table {
-    max-width: 500px;
+    max-width: 650px;
 }
 table th {
     text-align: right; /* fixing markdown extra issue with header alignment */
@@ -77,15 +77,15 @@ Custos
 ------
 O .org está registrado pelo NameCheap, e a renovação anual custa $15.16, com um pequeno desconto pra renovar por mais de um ano de uma vez.
 
-O .rio [varia bastante de acordo com o _registrar_](https://tld-list.com/tld/rio); atualmente usamos o Regtons, o mais em conta e "limpo" (sem prática de vendas casadas), no valor de $22.25 por ano. 
+O .rio [varia bastante de acordo com o _registrar_](https://tld-list.com/tld/rio); atualmente usamos o Regtons, o mais em conta e "limpo" (sem prática de vendas casadas), no valor de $22.25 por ano (variando levemente de acordo com o câmbio do dia). 
 
-Estes são os custos - baseados num câmbio aproximado de R$4.10 e IOF de 6.38%:
+Estes são os custos (valores ajustados considerando o câmbio final após os pagamentos, e considerando IOF de 6.38%):
 
-|                          | Custos US$|  Custos R$ |
-|--------------------------|----------:|-----------:|
-|`PHPRio.org` por 3 anos   |    $44.88 |  R$195.75  |
-|`PHP.Rio` por 3 anos      |    $66.75 |  R$291.14  |
-|                **Total** |**$111.63**|**R$486.89**|
+|                          | Custos US$|   Câmbio / Data |  Custos R$ |
+|--------------------------|----------:|----------------:|-----------:|
+|`PHPRio.org` por 3 anos   |    $44.88 | R$4.08 - 06/nov |   R$183.11 |
+|`PHP.Rio` por 3 anos      |    $65.75 | R$4.06 - 19/dez |   R$267.16 |
+|                **Total** |**$110.63**|                 |**R$479.00**|
 
 Contribua!
 ----------
@@ -142,7 +142,7 @@ Adicionamos os dados de transferência pelo **Itaú** e **NuConta**. O **PayPal*
 
 
 ### <label for="progresso">Progresso da Campanha: <span class="total"></span></label>
-<progress id="progresso" max="486.89" value="425.89"><span class="total"></span></progress>
+<progress id="progresso" max="479.00" value="410.00"><span class="total"></span></progress>
 <script>
     const valor = 'R$'+document.querySelector('#progresso').value
     document.querySelectorAll('.total').forEach(e => e.innerText = valor)
@@ -150,6 +150,28 @@ Adicionamos os dados de transferência pelo **Itaú** e **NuConta**. O **PayPal*
         document.querySelector('#obrigado').style.display = 'block'
     }
 </script>
+
+### Resultados da campanha
+![PHP.Rio 1](https://i.imgur.com/PuUjHj8.png)
+![PHP.Rio 2](https://i.imgur.com/unUqYxc.png)
+![PHPRio.org](https://i.imgur.com/l2DpI6N.png)
+
+#### Doadores
+- Carlos Alexandre de Carvalho
+- Cleiver Carneiro
+- Diogo Mascarenhas
+- Everton Muniz
+- Igor Santos
+- Ivan Silva
+- Leonardo Maguela
+- Luã de Souza
+- Luccas Silva
+- Raphael Freitas
+- Rodolfo da Silva
+- Vinicius Dias
+- Vinicius Reis
+- William Tavares
+
 
 ### Para tirar quaisquer dúvidas sobre a campanha, entre em contato:
 
