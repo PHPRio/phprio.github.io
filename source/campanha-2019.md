@@ -93,7 +93,7 @@ As doações esse ano serão feitas preferencialmente através do **PicPay**, pl
 
 Adicionamos os dados de transferência pelo **Itaú** e **NuConta**. O **PayPal** também foi adicionado, mas uma [parte da doação será perdida com tarifas](https://www.paypal.com/br/webapps/mpp/merchant-fees#commercialpayments).
 
-<!-- _momento Criança Esperança_ -->
+<!-- _momento Criança Esperança_
 <div id="botoes">
     <a class="button special" href="https://picpay.me/igorsantos07/1.00">
         <img alt="Uma bala" src="https://noto-website-2.storage.googleapis.com/emoji/emoji_u1f36c.png"/> Doar R$ 1
@@ -139,10 +139,10 @@ Adicionamos os dados de transferência pelo **Itaú** e **NuConta**. O **PayPal*
 </div>
 
 > Estes valores serão depositados na conta do organizador da campanha, e sempre atualizaremos os resultados aqui.
-
+-->
 
 ### <label for="progresso">Progresso da Campanha: <span class="total"></span></label>
-<progress id="progresso" max="479.00" value="410.00"><span class="total"></span></progress>
+<progress id="progresso" max="479.00" value="479.00"><span class="total"></span></progress>
 <script>
     const valor = 'R$'+document.querySelector('#progresso').value
     document.querySelectorAll('.total').forEach(e => e.innerText = valor)
@@ -166,6 +166,7 @@ Adicionamos os dados de transferência pelo **Itaú** e **NuConta**. O **PayPal*
 - Leonardo Maguela
 - Luã de Souza
 - Luccas Silva
+- MeuPatrocinio
 - Raphael Freitas
 - Rodolfo da Silva
 - Vinicius Dias
@@ -175,7 +176,7 @@ Adicionamos os dados de transferência pelo **Itaú** e **NuConta**. O **PayPal*
 
 ### Para tirar quaisquer dúvidas sobre a campanha, entre em contato:
 
-- Igor Santos ([email](mailto:igorsantos07+campanha@PHPRio.org), [Telegram](https://telegram.me/igorsantos07)), responsável pela campanha
+- Igor Santos ([Telegram](https://telegram.me/igorsantos07)), responsável pela campanha
 - o grupo ([Telegram](https://telegram.me/PHPRio), [lista](https://groups.google.com/forum/#!forum/PHPRio-org))
 
 ## Muito Obrigado!
