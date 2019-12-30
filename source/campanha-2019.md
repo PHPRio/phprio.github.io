@@ -169,6 +169,7 @@ Adicionamos os dados de transferência pelo **Itaú** e **NuConta**. O **PayPal*
 - MeuPatrocinio
 - Raphael Freitas
 - Rodolfo da Silva
+- Rodrigo Carneiro
 - Vinicius Dias
 - Vinicius Reis
 - William Tavares
