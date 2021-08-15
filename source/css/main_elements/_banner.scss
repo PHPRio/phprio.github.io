@@ -10,9 +10,8 @@
     text-align: center;
 
     .inner {
-        width: 35%;
-        min-width: 400px;
-        padding: _size(element-margin) 0 0 0;
+        max-width: 400px;
+        z-index: 1;
     }
 
     h2 {
@@ -49,17 +48,15 @@
     }
 
     img {
-        max-height: 100px;
-        vertical-align: middle;
-        margin-top: -20px;
-        margin-right: 20px;
+        width: 100%;
+        max-width: 240px;
     }
 
     p {
-        letter-spacing: _size(letter-spacing-alt);
         text-transform: uppercase;
-        padding: 0 _size(element-margin);
         font-weight: bold;
+        line-height: 1.25;
+        margin-top: 10px;
 
         a {
             color: inherit;
@@ -113,11 +110,11 @@
         position: absolute;
         left: 0;
         top: 0;
-        opacity: 0;
+        opacity: 0.5;
     }
 
     @include breakpoint(small) {
-        @include padding(7em, 3em);
+        @include padding(7em, 1em);
         height: auto;
         min-height: 0;
 
@@ -131,6 +128,11 @@
 
         .more {
             display: none;
+        }
+
+        img {
+            width: 100%;
+            max-width: 180px;
         }
     }
 }
