@@ -1,0 +1,182 @@
+//noinspection CssInvalidPropertyValue
+@-ms-viewport {
+    width: device-width;
+}
+
+body {
+    background: _palette(bg);
+
+    &.is-loading {
+        *, *:before, *:after {
+            @include vendor('animation', 'none !important');
+            @include vendor('transition', 'none !important');
+        }
+    }
+}
+
+//noinspection CssNoGenericFontName
+body, input, select, textarea {
+    color: _palette(fg);
+    font-family: _font(family);
+    font-size: 15pt;
+    font-weight: _font(weight);
+    letter-spacing: _size(letter-spacing);
+    line-height: 1.65em;
+
+    @include breakpoint(xlarge) {
+        font-size: 13pt;
+    }
+
+    @include breakpoint(large) {
+        font-size: 12pt;
+    }
+
+    @include breakpoint(small) {
+        font-size: 11pt;
+        letter-spacing: _size(letter-spacing) * 0.5;
+    }
+}
+
+a {
+    @include vendor('transition', ('color #{_duration(transitions)} ease', 'border-bottom-color #{_duration(transitions)} ease'));
+    border-bottom: dotted 1px;
+    color: inherit;
+    text-decoration: none;
+
+    &:hover {
+        border-bottom-color: transparent;
+    }
+}
+
+strong, b {
+    color: _palette(fg-bold);
+    font-weight: _font(weight-bold);
+}
+
+em, i {
+    font-style: italic;
+}
+
+p {
+    margin: 0 0 _size(element-margin) 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: _palette(fg-bold);
+    font-weight: _font(weight-extrabold);
+    letter-spacing: _size(letter-spacing-alt);
+    line-height: 1em;
+    margin: 0 0 (_size(element-margin) * 0.5) 0;
+    text-transform: uppercase;
+
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
+}
+
+h2 {
+    font-size: 1.35em;
+    line-height: 1.75em;
+
+    @include breakpoint(small) {
+        font-size: 1.1em;
+        line-height: 1.65em;
+    }
+}
+
+h3 {
+    font-size: 1.15em;
+    line-height: 1.75em;
+
+    @include breakpoint(small) {
+        font-size: 1em;
+        line-height: 1.65em;
+    }
+}
+
+h4 {
+    font-size: 1em;
+    line-height: 1.5em;
+}
+
+h5 {
+    font-size: 0.8em;
+    line-height: 1.5em;
+}
+
+h6 {
+    font-size: 0.7em;
+    line-height: 1.5em;
+}
+
+sub {
+    font-size: 0.8em;
+    position: relative;
+    top: 0.5em;
+}
+
+sup {
+    font-size: 0.8em;
+    position: relative;
+    top: -0.5em;
+}
+
+hr {
+    border: 0;
+    border-bottom: solid 2px _palette(border);
+    margin: (_size(element-margin) * 1.5) 0;
+
+    &.major {
+        margin: (_size(element-margin) * 2.25) 0;
+    }
+}
+
+blockquote {
+    border-left: solid 4px _palette(border);
+    font-style: italic;
+    margin: 0 0 _size(element-margin) 0;
+    padding: 0.5em 2em;
+    p:last-of-type {
+        margin-bottom: 0;
+    }
+}
+
+//noinspection CssNoGenericFontName
+code {
+    background: _palette(border-bg);
+    border-radius: 3px;
+    font-family: _font(family-fixed);
+    font-size: 0.9em;
+    letter-spacing: 0;
+    margin: 0 0.25em;
+    padding: 0.25em 0.65em;
+}
+
+//noinspection CssNoGenericFontName
+pre {
+    -webkit-overflow-scrolling: touch;
+    font-family: _font(family-fixed);
+    font-size: 0.9em;
+    margin: 0 0 _size(element-margin) 0;
+    text-align: left !important;
+
+    code {
+        display: block;
+        line-height: 1.75em;
+        padding: 1em 1.5em;
+        overflow-x: auto;
+    }
+}
+
+.align-left {
+    text-align: left;
+}
+
+.align-center {
+    text-align: center;
+}
+
+.align-right {
+    text-align: right;
+}

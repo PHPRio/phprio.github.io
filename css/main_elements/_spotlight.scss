@@ -1,0 +1,69 @@
+.spotlight {
+    @include vendor('align-items', 'center');
+    @include vendor('display', 'flex');
+
+    .image {
+        @include vendor('order', '1');
+        border-radius: 0;
+        width: 40%;
+
+        img {
+            border-radius: 0;
+            width: 100%;
+        }
+    }
+
+    .content {
+        @include padding(2em, 4em);
+        @include vendor('order', '2');
+        max-width: 48em;
+        width: 60%;
+    }
+
+    &:nth-child(2n) {
+        @include vendor('flex-direction', 'row-reverse');
+    }
+
+    @for $i from 1 through _misc(max-spotlights) {
+        $j: 0.075 * $i;
+
+        &:nth-child(#{$i}) {
+            background-color: rgba(0,0,0, $j);
+        }
+    }
+
+    @include breakpoint(large) {
+        .image {
+            width: 45%;
+        }
+
+        .content {
+            width: 55%;
+        }
+    }
+
+    @include breakpoint(medium) {
+        display: block;
+
+        br {
+            display: none;
+        }
+
+        .image {
+            width: 100%;
+        }
+
+        .content {
+            @include padding(4em, 3em);
+            max-width: none;
+            text-align: center;
+            width: 100%;
+        }
+    }
+
+    @include breakpoint(small) {
+        .content {
+            @include padding(3em, 2em);
+        }
+    }
+}

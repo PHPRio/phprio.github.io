@@ -1,0 +1,239 @@
+@mixin wrapper($p) {
+    background-color: _palette($p, bg);
+    color: _palette($p, fg);
+
+    // Basic
+
+    strong, b {
+        color: _palette($p, fg-bold);
+    }
+
+    h2, h3, h4, h5, h6 {
+        color: _palette($p, fg-bold);
+    }
+
+    hr {
+        border-color: _palette($p, border);
+    }
+
+    blockquote {
+        border-color: _palette($p, border);
+    }
+
+    code {
+        background: _palette($p, border-bg);
+    }
+
+    pre code {
+        background: transparentize(_palette($p, fg-bold), 0.3);
+    }
+
+    // Section/Article
+
+    header {
+        p {
+            color: _palette($p, fg-light);
+        }
+
+        &.major {
+            h2, h3, h4, h5, h6 {
+                border-color: _palette($p, border);
+            }
+
+            p {
+                color: _palette($p, fg);
+            }
+        }
+    }
+
+    // Form
+
+    label {
+        color: _palette($p, fg-bold);
+    }
+
+    input[type="text"],
+    input[type="password"],
+    input[type="email"],
+    select,
+    textarea {
+        background: _palette($p, border-bg);
+    }
+
+    .select-wrapper {
+        &:before {
+            color: _palette($p, border);
+        }
+    }
+
+    input[type="checkbox"],
+    input[type="radio"] {
+        & + label {
+            color: _palette($p, fg);
+
+            &:before {
+                background: _palette($p, border-bg);
+            }
+        }
+
+        &:checked + label {
+            &:before {
+                background: _palette($p, fg-bold);
+                color: _palette($p, bg);
+            }
+        }
+    }
+
+    ::-webkit-input-placeholder {
+        color: _palette($p, fg-light) !important;
+    }
+
+    :-moz-placeholder {
+        color: _palette($p, fg-light) !important;
+    }
+
+    ::-moz-placeholder {
+        color: _palette($p, fg-light) !important;
+    }
+
+    :-ms-input-placeholder {
+        color: _palette($p, fg-light) !important;
+    }
+
+    .formerize-placeholder {
+        color: _palette($p, fg-light) !important;
+    }
+
+    // Icon
+
+    .icon {
+        &.major {
+            border-color: _palette($p, border);
+        }
+    }
+
+    // List
+
+    ul {
+        &.alt {
+            li {
+                border-color: _palette($p, border);
+            }
+        }
+    }
+
+    // Table
+
+    table {
+        tbody {
+            tr {
+                border-color: _palette($p, border);
+
+                &:nth-child(2n + 1) {
+                    background-color: _palette($p, border-bg);
+                }
+            }
+        }
+
+        th {
+            color: _palette($p, fg-bold);
+        }
+
+        thead {
+            border-color: _palette($p, border);
+        }
+
+        tfoot {
+            border-color: _palette($p, border);
+        }
+
+        &.alt {
+            tbody {
+                tr {
+                    td {
+                        border-color: _palette($p, border);
+                    }
+                }
+            }
+        }
+    }
+
+    // Button
+
+    input[type="submit"],
+    input[type="reset"],
+    input[type="button"],
+    button,
+    .button {
+        box-shadow: inset 0 0 0 2px _palette($p, border);
+        color: _palette($p, fg-bold);
+
+        &:hover {
+            background-color: _palette($p, border-bg);
+        }
+
+        &:active {
+            background-color: _palette($p, border2-bg);
+        }
+    }
+
+    // Features
+
+    .features {
+        li {
+            @include breakpoint(small) {
+                border-top-color: _palette($p, border);
+            }
+        }
+    }
+
+}
+
+.wrapper {
+    @include padding(6em, 0);
+
+    > .inner {
+        width: 60em;
+        margin: 0 auto;
+
+        @include breakpoint(large) {
+            width: 90%;
+        }
+
+        @include breakpoint(medium) {
+            width: 100%;
+        }
+    }
+
+    &.alt {
+        padding: 0;
+    }
+
+    &.style1 {
+        @include wrapper(accent1);
+    }
+
+    &.style2 {
+        background-color: _palette(bg);
+    }
+
+    &.style3 {
+        @include wrapper(accent5);
+    }
+
+    &.style4 {
+        background-color: transparent;
+    }
+
+    &.style5 {
+        @include wrapper(accent7);
+    }
+
+    @include breakpoint(medium) {
+        @include padding(4em, 3em);
+    }
+
+    @include breakpoint(small) {
+        @include padding(3em, 2em);
+    }
+}

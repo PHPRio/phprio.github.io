@@ -1,0 +1,103 @@
+section, article {
+    &.special {
+        text-align: center;
+    }
+
+    aside {
+        $spacing: _size(element-margin) * 0.5;
+        border-top: 1px solid transparentize(_palette(border2), 0.5);
+        font-size: 85%;
+        padding: $spacing;
+
+        p {
+            margin-bottom: 0;
+        }
+    }
+
+    nav.article {
+        ul {
+            list-style: none;
+            padding-left: 0;
+            li {
+                padding-left: 0;
+            }
+        }
+    }
+
+    blockquote {
+        background-color: transparentize(white, 0.8);
+    }
+}
+
+header {
+    p {
+        color: _palette(fg-light);
+        position: relative;
+        top: -0.25em;
+
+        i.fa {
+            padding-left: 15px;
+            &:first-of-type {
+                padding-left: 0;
+            }
+        }
+    }
+
+    h2 + time {
+        margin-top: _size(element-margin) * -1;
+        padding-top: _size(element-margin) / 2;
+        font-size: 0.9em;
+        font-style: italic;
+        display: block;
+    }
+
+    h2 + p {
+    }
+
+    h3 + p {
+        font-size: 1.1em;
+    }
+
+    h4 + p,
+    h5 + p,
+    h6 + p {
+        font-size: 0.9em;
+    }
+
+    &.major {
+        margin: 0 0 (_size(element-margin) * 1.75) 0;
+
+        h2, h3, h4, h5, h6 {
+            border-bottom: solid 2px _palette(border);
+            display: inline-block;
+            padding-bottom: 1em;
+            position: relative;
+
+            &:after {
+                content: '';
+                display: block;
+                height: 1px;
+            }
+        }
+
+        p {
+            color: _palette(fg);
+            top: 0;
+        }
+
+        @include breakpoint(small) {
+            margin: 0 0 _size(element-margin) 0;
+        }
+    }
+
+    @include breakpoint(medium) {
+        br {
+            display: none;
+        }
+    }
+}
+
+#one header h2 + time {
+    padding-top: 5px;
+    padding-bottom: 10px;
+}

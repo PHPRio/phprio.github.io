@@ -1,0 +1,183 @@
+<!DOCTYPE HTML>
+<html>
+<!--
+	Spectral by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CC-BY 3.0 license (html5up.net/license)
+-->
+
+<head>
+    <title>Palestras Anteriores || PHPRio - Grupo de Desenvolvedores PHP do Rio e Grande Rio de Janeiro</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta name="robots" content="noindex, follow">
+    
+    <link rel="stylesheet" href="/css/main.css">
+
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="/images/favicon/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/images/favicon/favicon-194x194.png" sizes="194x194">
+    <link rel="icon" type="image/png" href="/images/favicon/android-chrome-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="/images/favicon/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="/images/favicon/manifest.json">
+    <link rel="mask-icon" href="/images/favicon/safari-pinned-tab.svg" color="#0074c4">
+    <link rel="shortcut icon" href="/images/favicon/favicon.ico">
+    <meta name="msapplication-config" content="/images/browserconfig.xml">
+    <meta name="theme-color" content="#505B93">
+
+        <script src="https://kit.fontawesome.com/2ac7634ad0.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/default.min.css">
+    <link rel="alternate" type="application/atom+xml" href="/atom.xml" title="Feed de atividades do PHPRio" />
+    <style>
+        /** quick fix because bootstrap <pre> has a background-color. */
+        pre code { background-color: inherit; }
+    </style>
+        </head>
+<body>
+
+<div id="page-wrapper">
+
+    <header id="header" >
+    <h1><a href="/"><img src="/images/logo.png" alt="Logo PHPRio"/> PHPRio</a></h1>
+
+    <nav id="nav">
+        <ul>
+            <li class="special">
+                <a href="#menu" class="menuToggle"><span>Menu</span></a>
+                <div id="menu">
+                    <ul>
+                        <li><a href="/eventos">Nossos eventos</a></li>
+                        <li><a href="/talks">Palestras anteriores</a></li>
+                        <li><a href="https://github.com/PHPRio/CFP">Enviar uma palestra</a></li>
+                        <li><a href="/vagas">Divulgar uma vaga</a></li>
+                        <li><a href="/apoie-nos">Apoie-nos!</a></li>
+                        <li><a href="/parceiros">Empresas parceiras</a></li>
+                        <li><a href="/sobre">Sobre o grupo</a></li>
+                        <li><a href="/codigo-de-conduta">Código de Conduta</a></li>
+
+                        <li><a href="/campanha-2019"><strong>Arrecad. domínio - 2019</strong></a></li>
+                        <li class="old"><a href="/campanha-2016">Arrecad. domínio - 2016</a></li>
+                        <!-- o link da campanha, na verdade, é outro site hospedado no GitHub também: github.com/PHPRio/campanha-2016 -->
+
+                        <li class="old"><a href="/news">Arquivo de News</a></li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+    <article id="main" class="clean">
+		<header class="random-bg">
+			<div class="inner"><h2>Palestras Anteriores</h2></div>
+		</header>
+
+		<section class="wrapper style5" id="archive">
+			<div class="inner">
+								    <p class="align-left">
+    Um dos tipos de <a href="/eventos">eventos que organizamos no PHPRio</a> são os Ciclos de Palestras.<br/>
+    A cada novo evento, <a href="https://github.com/PHPRio/CFP">convidamos a comunidade a submeter palestras</a>, e as mais votadas são selecionadas para
+    participar das talks do mês.
+    <!-- TODO: melhorar esse texto -->
+</p>
+
+<ul class="features" id="talks">
+    <template id="talk">
+        <li>
+            <h3><a href=""><!-- Título --></a></h3>
+            <h4><!-- Subtítulo? --></h4>
+            <div class="body"></div>
+            <div class="labels"></div>
+        </li>
+    </template>
+</ul>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.0/showdown.min.js" integrity="sha256-LSUpTY0kkXGKvcBC9kbmgibmx3NVVgJvAEfTZbs51mU=" crossorigin="anonymous"></script>
+<script>
+    const talks = document.querySelector('#talks')
+    const template = talks.querySelector('template')
+    const markdown = new showdown.Converter()
+
+    fetch('https://api.github.com/repos/PHPRio/CFP/issues?state=closed&labels=Palestras')
+        .then(r => r.json())
+        .then(githubList => githubList.forEach(issue => {
+            const talk = document.importNode(template.content, true)
+            talk.querySelector('h3 a').href = issue.html_url
+            talk.querySelector('h3 a').innerText = issue.title
+            // talk.querySelector('h4').innerHTML = `Por @${issue.user.login}`
+            talk.querySelector('h4').remove()
+
+            //limpando a descrição da issue pra ficar mais apresentável na página
+            const body = issue.body
+                .replace(/(Nível|Título|Palavras-chaves?):.*\r\n/gi, '')
+                .replace(/Descrição da palestra:.*\r\n/i, '')
+                .replace(/(Palestrante:)/i, '<br/>$1')
+                .replace(/#(\d+)/, 'https://github.com/PHPRio/CFP/issues/$1')
+	            .replace(/\[?(Slides|Referências?|Vídeo|GitHub)(:\s*|\]\()(http.+)\)?/gi,
+		            '<a target="_blank" href="$3" class="button icon fa-play-circle">$1</a>')
+            talk.querySelector('.body').innerHTML = markdown.makeHtml(body)
+
+            const labels = talk.querySelector('.labels')
+            issue.labels
+                .filter(l => l.name != 'Palestras')
+                .forEach(label => {
+                    const el = document.createElement('a')
+                    el.target = '_blank'
+	                el.classList.add('button', 'small', 'icon', 'fa-hashtag')
+                    el.style.backgroundColor = `#${label.color}`
+	                el.href = `https://github.com/PHPRio/CFP/issues?labels=Palestras,${label.name}`
+	                el.innerText = label.name
+                    labels.appendChild(el)
+                })
+            talks.appendChild(talk)
+        }))
+        .catch(e => {
+        	console.error(e)
+            if (confirm('Tivemos um problema pra pegar a lista de palestras no Repositório de CFP. Quer visitá-lo?')) {
+                window.location = 'https://github.com/PHPRio/CFP/issues?labels=Palestras'
+            }
+        })
+</script>							</div>
+		</section>
+	</article>
+
+    <footer id="footer">
+    <ul class="icons fa-2x">
+        <li><a target="_blank" href="https://telegram.me/phprio" title="Fale conosco no Telegram" class="icon fa-2x fa-telegram-plane"><span class="label">Telegram</span></a></li>
+        <li><a target="_blank" href="https://groups.google.com/forum/#!forum/phprio-org" title="Discuta ideias no Google Groups" class="icon fa-2x fa-comments"><span class="label">Google Groups</span></a></li>
+        <li><a target="_blank" href="https://meetup.com/PHP-Rio" title="Encontre-nos pelo Meetup" class="icon fa-2x fa-meetup"><span class="label">Meetups</span></a></li>
+        <li>|</li>
+        <li><a target="_blank" href="https://medium.com/phprio" title="Nosso blog colaborativo no Medium" class="icon fa-2x fa-medium-m"><span class="label">Medium</span></a></li>
+        <li><a target="_blank" href="https://github.com/PHPRio" title="Nosso código, aberto no GitHub" class="icon fa-2x fa-github-alt"><span class="label">GitHub</span></a></li>
+        <li><a target="_blank" href="https://twitter.com/phprio" title="Siga-nos no Twitter" class="icon fa-2x fa-twitter"><span class="label">Twitter</span></a></li>
+        <li><a target="_blank" href="https://www.facebook.com/PHPRio-160383237381004" title="Acompanhe a gente no Facebook" class="icon fa-2x fa-facebook-f"><span class="label">Facebook</span></a></li>
+        <li><a target="_blank" href="https://www.linkedin.com/groups/1202577" title="Participe do grupo no LinkedIn" class="icon fa-2x fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+    </ul>
+    <ul class="copyright">
+        <li>&copy; 2021 PHPRio</li>
+        <li>Termos de uso do conteúdo <a target="_blank" href="https://creativecommons.org/licenses/by-sa/3.0/deed.pt_BR">CC-BY-SA</a></li>
+        <li>Template: <a href="http://html5up.net">HTML5 UP</a></li>
+    </ul>
+</footer>
+
+
+
+<script src="//code.jquery.com/jquery-1.12.4.min.js"></script> <!-- FIXME: podemos migrar pro 2? 3? -->
+<script src="/js/jquery.scrollex.min.js"></script>
+<script src="/js/jquery.scrolly.min.js"></script>
+<script src="/js/skel.min.js"></script>
+<script src="/js/util.js"></script>
+<script src="/js/main.js"></script>
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+</div>
+</body>
+</html>

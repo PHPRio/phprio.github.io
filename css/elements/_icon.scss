@@ -1,0 +1,43 @@
+.icon {
+    @include icon;
+    border-bottom: none;
+    position: relative;
+
+    > .label {
+        display: none;
+    }
+
+    &.major {
+        @include vendor('transform', 'rotate(-45deg)');
+        border-radius: 3px;
+        border: solid 2px _palette(border);
+        display: inline-block;
+        font-size: 1.35em;
+        height: calc(3em + 2px);
+        line-height: 3em;
+        text-align: center;
+        width: calc(3em + 2px);
+
+        &:before {
+            @include vendor('transform', 'rotate(45deg)');
+            display: inline-block;
+            font-size: 1.5em;
+        }
+
+        @include breakpoint(small) {
+            font-size: 1em;
+        }
+    }
+
+    &.style1 {
+        color: _palette(accent2, bg);
+    }
+
+    &.style2 {
+        color: _palette(accent3, bg);
+    }
+
+    &.style3 {
+        color: _palette(accent4, bg);
+    }
+}

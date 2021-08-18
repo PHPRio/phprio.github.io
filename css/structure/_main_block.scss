@@ -1,0 +1,58 @@
+#main {
+    > header {
+        @include padding(12em, 0);
+        //@include vendor('background-image', ('linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5))', 'url("../../images/banner.jpg")'));
+        //background: no-repeat fixed center center;
+        //background-size: cover;
+        text-align: center;
+
+        h2 {
+            font-size: 1.75em;
+            margin: 0 0 (_size(element-margin) * 0.25) 0;
+        }
+
+        p {
+            color: inherit;
+            letter-spacing: _size(letter-spacing-alt);
+            text-transform: uppercase;
+            top: 0;
+
+            a {
+                color: inherit;
+            }
+        }
+
+        @include breakpoint(xlarge) {
+            @include padding(10em, 0);
+        }
+
+        @include breakpoint(large) {
+            @include padding(8em, 3em);
+        }
+
+        @include breakpoint(medium) {
+            @include padding(10em, 3em);
+        }
+
+        @include breakpoint(small) {
+            @include padding(5em, 3em);
+
+            h2 {
+                font-size: 1.25em;
+                margin: 0 0 (_size(element-margin) * 0.5) 0;
+            }
+        }
+    }
+}
+
+#main.clean > header {
+    @include padding(2em, 0, (0,0,2em,0));
+}
+
+body.is-mobile {
+    #main {
+        > header {
+            background-attachment: scroll;
+        }
+    }
+}

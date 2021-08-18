@@ -1,0 +1,49 @@
+@import "dependencies";
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic,800,800italic');
+
+// Spectral by HTML5 UP
+// html5up.net | @ajlkn
+// Free for personal and commercial use under the CC-BY 3.0 license (html5up.net/license)
+
+@import "basic";
+
+/* Diverse elements */
+@import "elements/section-article";
+//@import "elements/form";
+@import "elements/box";
+@import "elements/icon";
+@import "elements/image";
+@import "elements/list";
+@import "elements/table";
+@import "elements/button";
+
+/* Main elements */
+@import "main_elements/banner";
+@import "main_elements/features";
+@import "main_elements/spotlight";
+@import "main_elements/cta";
+
+/* Structural elements */
+@import "structure/wrapper";
+@import "structure/page_wrapper";
+@import "structure/header";
+@import "structure/main_block";
+@import "structure/footer";
+
+@import "pages/landing";
+@import "pages/archive";
+
+.button {
+    box-shadow: none !important;
+
+    &.clear {
+        background-color: transparent;
+        border: 2px solid #2E3842;
+        color: #2E3842 !important;
+
+        &.special {
+            border-color: #6C88E3;
+            color: #6C88E3 !important;
+        }
+    }
+}

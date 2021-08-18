@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title><![CDATA[PHPRio]]></title>
+    <link href="https://php.rio/news/tags/evento.xml" rel="self"/>
+    <link href="https://php.rio/"/>
+    <updated>2021-08-18T15:18:43+00:00</updated>
+    <id>https://php.rio/</id>
+        <generator uri="http://sculpin.io/">Sculpin</generator>
+            <entry>
+            <title type="html"><![CDATA[TestFest PHPRio - 2017]]></title>
+            <link href="https://php.rio/news/2017-10-30/testfest-phprio/"/>
+            <updated>2017-10-30T00:00:00+00:00</updated>
+            <id>https://php.rio/news/2017-10-30/testfest-phprio/</id>
+            <content type="html"><![CDATA[<p>Aconteceu no último sábado, dia 21/10/2017 o primeiro TestFest da comunidade phprio na stone. TestFests, são eventos em que os participantes tem o objetivo de aumentar a cobertura de testes da suíte de testes de um projeto. A própria linguagem PHP tem os seus TestFests. Também é possível que qualquer projeto possa organizar o seu TestFest.
+Nosso objetivo era fazer com que mais pessoas estejam preparadas para realizar testes no projeto e para isso iniciamos nosso evento com uma palestra apresentada pelo Vitor Mattos junto com a preparação de ambiente .</p>
+
+<blockquote>
+  <p><strong><a href="https://medium.com/@dsalves/testfest-phprio-112110f90b64">Continue lendo</a></strong></p>
+</blockquote>
+]]></content>
+        </entry>
+            <entry>
+            <title type="html"><![CDATA[Boteco PHP de Final de ano - 2016]]></title>
+            <link href="https://php.rio/news/2016-12-01/boteco-php-final-de-ano/"/>
+            <updated>2016-12-01T00:00:00+00:00</updated>
+            <id>https://php.rio/news/2016-12-01/boteco-php-final-de-ano/</id>
+            <content type="html"><![CDATA[<p>De uma maneira bem mais informal, vamos nos reunir para fomentar eventos ao vivo e online. Conversar sobre a linguagem, trabalho, eventos e tudo mais.</p>
+
+<blockquote>
+  <p><strong><a href="http://bournburger.com.br">Bourn Burger</a> (<a href="https://www.facebook.com/bournburger/">Facebook</a>):</strong><br />
+  Novo local para saborearmos boa comida, hambúrgueres, e umas boas cervejas. Fica próximo ao já conhecido Lapa Café, na Rua Gomes Freire - próximo à Mem de Sá.</p>
+</blockquote>
+]]></content>
+        </entry>
+    </feed>

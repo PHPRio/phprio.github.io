@@ -1,0 +1,177 @@
+ol {
+    list-style: decimal;
+    margin: 0 0 _size(element-margin) 0;
+    padding-left: 1.25em;
+
+    li {
+        padding-left: 0.25em;
+    }
+}
+
+ul {
+    list-style: disc;
+    margin: 0 0 _size(element-margin) 0;
+    padding-left: 1em;
+
+    li {
+        padding-left: 0.5em;
+    }
+
+    &.alt {
+        list-style: none;
+        padding-left: 0;
+
+        li {
+            border-top: solid 1px _palette(border);
+            padding: 0.5em 0;
+
+            &:first-child {
+                border-top: 0;
+                padding-top: 0;
+            }
+        }
+    }
+
+    &.icons {
+        cursor: default;
+        list-style: none;
+        padding-left: 0;
+
+        li {
+            display: inline-block;
+            padding: 0 1em 0 0;
+
+            &:last-child {
+                padding-right: 0 !important;
+            }
+        }
+
+        &.long li {
+            display: block;
+        }
+
+        &.major {
+            padding: 1em 0;
+
+            li {
+                padding-right: 3.5em;
+
+                @include breakpoint(small) {
+                    padding: 0 1em !important;
+                }
+            }
+        }
+    }
+
+    &.actions {
+        cursor: default;
+        list-style: none;
+        padding-left: 0;
+
+        li {
+            display: inline-block;
+            padding: 0 (_size(element-margin) * 0.75) 0 0;
+            vertical-align: middle;
+
+            &:last-child {
+                padding-right: 0;
+            }
+        }
+
+        &.small {
+            li {
+                padding: 0 (_size(element-margin) * 0.375) 0 0;
+            }
+        }
+
+        &.vertical {
+            li {
+                display: block;
+                padding: (_size(element-margin) * 0.75) 0 0 0;
+
+                &:first-child {
+                    padding-top: 0;
+                }
+
+                > * {
+                    margin-bottom: 0;
+                }
+            }
+
+            &.small {
+                li {
+                    padding: (_size(element-margin) * 0.375) 0 0 0;
+
+                    &:first-child {
+                        padding-top: 0;
+                    }
+                }
+            }
+        }
+
+        &.fit {
+            display: table;
+            margin-left: (_size(element-margin) * -0.75);
+            padding: 0;
+            table-layout: fixed;
+            width: calc(100% + #{(_size(element-margin) * 0.75)});
+
+            li {
+                display: table-cell;
+                padding: 0 0 0 (_size(element-margin) * 0.75);
+
+                > * {
+                    margin-bottom: 0;
+                }
+            }
+
+            &.small {
+                margin-left: (_size(element-margin) * -0.375);
+                width: calc(100% + #{(_size(element-margin) * 0.375)});
+
+                li {
+                    padding: 0 0 0 (_size(element-margin) * 0.375);
+                }
+            }
+        }
+
+        @include breakpoint(small) {
+            li {
+                display: block;
+                padding: (_size(element-margin) * 0.5) 0 0 0;
+                text-align: center;
+                width: 100%;
+
+                &:first-child {
+                    padding-top: 0;
+                }
+
+                > * {
+                    margin: 0 auto !important;
+                    max-width: 30em;
+                    width: 100%;
+
+                    &.icon {
+                        &:before {
+                            margin-left: -1em;
+                        }
+                    }
+                }
+            }
+
+            &.small {
+                li {
+                    padding: (_size(element-margin) * 0.25) 0 0 0;
+
+                    &:first-child {
+                        padding-top: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+dl {
+    margin: 0 0 _size(element-margin) 0;
+}
