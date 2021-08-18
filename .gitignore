@@ -1,5 +1,6 @@
 /vendor/
 /output_dev/
+/output_prod/
 
 # Eclipse
 .buildpath
