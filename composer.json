@@ -4,7 +4,7 @@
     "type": "project",
     "minimum-stability": "dev",
     "require": {
-	    "php": "^7.2",
+	    "php": "^8.0",
         "sculpin/sculpin": "^3.0"
     },
     "license": "MIT",
@@ -15,7 +15,10 @@
         }
     ],
     "config": {
-        "process-timeout": 0
+        "process-timeout": 0,
+        "allow-plugins": {
+            "sculpin/sculpin-theme-composer-plugin": true
+        }
     },
     "scripts": {
         "generate"  : "sculpin generate --clean",

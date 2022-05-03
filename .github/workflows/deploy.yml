@@ -19,8 +19,8 @@ jobs:
     - name: Setup PHP
       uses: shivammathur/setup-php@v2
       with:
-        php-version: 7.x
-        tools: composer:v1
+        php-version: 8.x
+        tools: composer:v2
 
     # Valida o arquivo composer.json.
     - name: Validate composer.json and composer.lock

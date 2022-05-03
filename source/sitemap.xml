@@ -1,6 +1,7 @@
 ---
 use: ["posts"]
 permalink: sitemap.xml
+title: Sitemap
 ---
 
 <?xml version="1.0" encoding="UTF-8"?>
