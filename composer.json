@@ -25,8 +25,6 @@
         "watch"     : "sculpin generate --clean --server --watch",
         "serve"     : "sculpin generate --clean --server",
         "server"    : "@serve",
-        "sass"      : "node-sass --source-map true --source-map-contents --output-style=compressed -o source/css source/css/main.scss",
-        "sass-watch": "node-sass --source-map true --source-map-contents --output-style=compressed -o source/css  --watch source/css/main.scss",
 
         "prod"      : ["sculpin generate --clean --env=prod"],
         "deploy"    : "cd output_prod; git add -A .; git commit -m 'Atualizando build do site'; git push origin HEAD:master; cd ..",
