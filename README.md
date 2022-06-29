@@ -3,10 +3,18 @@
 [![Status do build](https://github.com/PHPRio/site/actions/workflows/deploy.yml/badge.svg)](https://github.com/PHPRio/site/actions/workflows/deploy.yml)  
  
 Este repositório contém os sources do [php.rio](http://php.rio).
-Utilizamos o [Sculpin](https://sculpin.io) para gerar o site estático e próprio [GitHub Pages](https://pages.github.com) para hospedar.
+Utilizamos o [Sculpin](https://sculpin.io) para gerar o site estático e o hospedamos no [GitHub Pages](https://pages.github.com).
+
+## Sobre o Sculpin
+
+Para o desenvolvimento, tínhamos duas opções:
  
-> *Disclaimer:*  
-> Esse projeto foi baseado no exemplo de Blog Skeleton disponível no [Get Started deles](https://sculpin.io/getstarted).
+1. Fazer o site com [Jekyll](https://jekyllrb.com) e forçar a galera a se virar com Ruby e similares :mask:
+2. Fazer o site com um primo PHP do Jekyll, o [Sculpin](https://sculpin.io), que é PHPRio-friendly.
+
+Obviamente, fomos pela segunda opção. Esse projeto foi baseado no exemplo de Blog Skeleton disponível no [Get Started deles](https://sculpin.io/getstarted).
+
+Também habilitamos uma extensão do Markdown. [Os detalhes do que é possível fazer a mais está disponível na página do processador em PHP usado](https://michelf.ca/projects/php-markdown/extra).
 
 ## Instalação
 
@@ -52,14 +60,3 @@ A build está sendo feita automaticamente usando [Github Actions](https://docs.g
 
 ### Desenvolvimento e como contribuir
 Veja o `CONTRIBUTING.md` para detalhes sobre como desenvolver e contribuir com o site.
-
-## Gerador de site estático
-
-Para o desenvolvimento, tínhamos duas opções:
- 
-1. Fazer o site com [Jekyll](https://jekyllrb.com) e forçar a galera a se virar com Ruby e similares :mask:
-2. Fazer o site com um primo PHP do Jekyll, o [Sculpin](https://sculpin.io), que é PHPRio-friendly.
-
-Obviamente, fomos pela segunda opção.
-
-Também habilitamos uma extensão do Markdown. [Os detalhes do que é possível fazer a mais está disponível na página do processador em PHP usado](https://michelf.ca/projects/php-markdown/extra).
