@@ -1,14 +1,14 @@
 # Sources do site do PHP.rio
 
-[![Status do build](https://github.com/PHPRio/site/actions/workflows/deploy.yml/badge.svg)](https://github.com/PHPRio/site/actions/workflows/deploy.yml)  
- 
+[![Status do build](https://github.com/PHPRio/site/actions/workflows/deploy.yml/badge.svg)](https://github.com/PHPRio/site/actions/workflows/deploy.yml)
+
 Este repositório contém os sources do [php.rio](http://php.rio).
 Utilizamos o [Sculpin](https://sculpin.io) para gerar o site estático e o hospedamos no [GitHub Pages](https://pages.github.com).
 
 ## Sobre o Sculpin
 
 Para o desenvolvimento, tínhamos duas opções:
- 
+
 1. Fazer o site com [Jekyll](https://jekyllrb.com) e forçar a galera a se virar com Ruby e similares :mask:
 2. Fazer o site com um primo PHP do Jekyll, o [Sculpin](https://sculpin.io), que é PHPRio-friendly.
 
@@ -22,9 +22,9 @@ _muidifício_.
 
 1. Clone o repositório.
    ```
-   git clone git@github.com:PHPRio/phprio.github.io.git
+   git clone --recurse-submodules git@github.com:PHPRio/phprio.github.io.git
    ```
-2. Instale as dependências  
+2. Instale as dependências
    (espero que você tenha o Composer instalado, né? Senão, veja [a seguir](#Composer)).
    ```sh
    composer install
