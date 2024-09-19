@@ -10,9 +10,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    # Clona o repositório.
+    # Clona o repositório com os submódulos inicializados.
     # Veja https://github.com/actions/checkout
-    - uses: actions/checkout@v2
+    - name: Checkout repository with submodules
+      uses: actions/checkout@v3
+      with:
+        submodules: true          # Inicializa os submódulos
+        fetch-depth: 0            # Garante que todo o histórico seja baixado
 
     # Instala PHP e Composer.
     # Veja https://github.com/shivammathur/setup-php
